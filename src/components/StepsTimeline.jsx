@@ -1,5 +1,5 @@
 import react, { useState, useEffect, useRef } from 'react';
-import './Timeline.css'
+import '../assets/Timeline.css'
 
 function ScrollSquare({ text, imgSrc }) {
   const [isVisible, setIsVisible] = useState(false);
