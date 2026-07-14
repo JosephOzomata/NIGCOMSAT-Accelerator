@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-import React, { useEffect, useRef, useState } from 'react';
-=======
->>>>>>> 12ee9448c84a89dbf34f223ee72e101f76d1e68c
 
->>>>>>> 49304832852ca22ca1f92374580f6315706ad98e
+import React, { useEffect, useRef, useState } from 'react';
 import React from 'react';
 import { motion } from 'framer-motion';
 
