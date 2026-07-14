@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from "../images/logo.jpeg";
 
 const Footer = () => {
   return (
@@ -25,7 +26,7 @@ const Footer = () => {
         </div>
         <div className='flex justify-center items-center'>
             <div className='w-60 h-60 rounded-full shadow-lg bg-white '>
-
+                <img src={logo} alt="Logo" className='w-full h-full object-cover rounded-full'/>
             </div>
         </div>
         <div className="max-w-md space-y-5">

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Search, User } from 'lucide-react';
-// import {logo } from "../assets/logo.jpeg";
+import logo from "../images/logo.jpeg";
 
 const NavBar = () => {
   const [searchExpanded, setSearchExpanded] = useState(false);
@@ -36,9 +36,9 @@ const NavBar = () => {
                 {/* Logo */}
                 <div className="flex  justify-center items-center gap-3">
                   {/* {logo} */}
-                  <div className="w-25 shadow-lg h-25 absolute rounded-full bg-white ">
-
-                  </div>
+                  
+                      <img src={logo} alt="" className="w-25 animate-pulse shadow-lg h-25 absolute overflow-hidden rounded-full bg-white" />
+                  
                 </div>
                 {/* Extras */}
                 <div className="hidden lg:flex justify-evenly items-center gap-1">
