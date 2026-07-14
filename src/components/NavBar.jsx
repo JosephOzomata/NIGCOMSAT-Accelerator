@@ -36,9 +36,9 @@ const NavBar = () => {
                 {/* Logo */}
                 <div className="flex  justify-center items-center gap-3">
                   {/* {logo} */}
-                  {/* <div className="w-20 h-20 rounded-full bg-white border border-black">
+                  <div className="w-25 shadow-lg h-25 absolute rounded-full bg-white ">
 
-                  </div> */}
+                  </div>
                 </div>
                 {/* Extras */}
                 <div className="hidden lg:flex justify-evenly items-center gap-1">
