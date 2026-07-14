@@ -1,20 +1,21 @@
 NigComSat Accelerator Website remake
 
-Team
+Team           |   Roles
+---------------------------------
+- Joseph       |   Team lead
+- Divine       |   Product manager
+- Mofe         |   UI|UX/Resource management
+- Mohammed     |   Individual dev
+- Cheta        |   Individual dev
+- Frank        |   Individual dev
 
--
--
--
--
--
--
+Project supervisor - Madam Maureen
 
-Project supervisor -
+Task - Recreate the current NigComSat Accelerator website [ncsaccelerate.com](https://ncsaccelerate.com/). Make it much more presentable and appealing (Visually and functionally)
+Deliverables - A fully functional website with added information (Hackathon, Spacefest)
 
-Task -
-Deliverables -
 Resouces/Assets -
-Timeline -
+Timeline - 2 weeks
 
 Day 1
  Progress report
