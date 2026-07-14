@@ -1,5 +1,5 @@
 
-import launchpadImage from "../assets/images/launchpad.png";
+// import launchpadImage from "../assets/images/launchpad.png";
 
 function Launchpad() {
   return (
@@ -8,11 +8,11 @@ function Launchpad() {
       <div className="flex items-start gap-16">
 
         <div className="w-[50%]">
-          <img
+          {/* <img
             src={launchpadImage}
             alt="Launchpad"
             className="w-full h-[700px] object-cover rounded-3xl"
-         />
+         /> */}
         </div>
 
         {/* Right Side - Content */}

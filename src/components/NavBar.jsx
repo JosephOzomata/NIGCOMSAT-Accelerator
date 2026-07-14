@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Search, User } from 'lucide-react';
-import logo from "../images/logo.jpeg";
+// import logo from "../images/logo.jpeg";
+import livelogo from "../images/livelogo.mp4";
 
 const NavBar = () => {
   const [searchExpanded, setSearchExpanded] = useState(false);
@@ -37,8 +38,8 @@ const NavBar = () => {
                 <div className="flex  justify-center items-center gap-3">
                   {/* {logo} */}
                   
-                      <img src={logo} alt="" className="w-25 animate-pulse shadow-lg h-25 absolute overflow-hidden rounded-full bg-white" />
-                  
+                    {/* <img src={logo} alt="" className="w-25 animate-pulse shadow-lg h-25 absolute overflow-hidden rounded-full bg-white" /> */}
+                  <video src={livelogo} autoPlay loop muted className="w-25 h-25 absolute overflow-hidden rounded-full bg-white" />
                 </div>
                 {/* Extras */}
                 <div className="hidden lg:flex justify-evenly items-center gap-1">

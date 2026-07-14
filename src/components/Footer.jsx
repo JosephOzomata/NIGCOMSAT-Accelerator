@@ -1,5 +1,6 @@
 import React from 'react'
-import logo from "../images/logo.jpeg";
+// import logo from "../images/logo.jpeg";
+import livelogo from "../images/livelogo.mp4";
 
 const Footer = () => {
   return (
@@ -25,8 +26,9 @@ const Footer = () => {
 
         </div>
         <div className='flex justify-center items-center'>
-            <div className='w-60 h-60 rounded-full shadow-lg bg-white '>
-                <img src={logo} alt="Logo" className='w-full h-full object-cover rounded-full'/>
+            <div className='w-60 h-60 rounded-full flex items-center justify-center shadow-lg bg-white '>
+                {/* <img src={logo} alt="Logo" className='w-full h-full object-cover rounded-full'/> */}
+                <video src={livelogo} autoPlay loop muted className="w-full h-full object-cover rounded-full"/>
             </div>
         </div>
         <div className="max-w-md space-y-5">
