@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Search, User } from 'lucide-react';
 // import logo from "../images/logo.jpeg";
-import livelogo from "../images/livelogo.mp4";
+import livelogo from "../images/livelogo.webm";
 
 const NavBar = () => {
   const [searchExpanded, setSearchExpanded] = useState(false);

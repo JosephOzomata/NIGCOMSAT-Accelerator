@@ -1,6 +1,6 @@
 import React from 'react'
 // import logo from "../images/logo.jpeg";
-import livelogo from "../images/livelogo.mp4";
+import livelogo from "../images/livelogo.webm";
 
 const Footer = () => {
   return (
@@ -26,13 +26,13 @@ const Footer = () => {
 
         </div>
         <div className='flex justify-center items-center'>
-            <div className='w-60 h-60 rounded-full flex items-center justify-center shadow-lg bg-white '>
+            
                 {/* <img src={logo} alt="Logo" className='w-full h-full object-cover rounded-full'/> */}
-                <video src={livelogo} autoPlay loop muted className="w-full h-full object-cover rounded-full"/>
-            </div>
+                <video src={livelogo} autoPlay loop muted className="w-60 h-60 object-cover "/>
+            
         </div>
         <div className="max-w-md space-y-5">
-            <p className="text-gray-300 text-sm leading-6">Subscribe to our newsletter to stay up to date with the latest news, updates, and exclusive offers.</p>
+            <p className="text-gray-600 text-sm leading-6">Subscribe to our newsletter to stay up to date with the latest news, updates, and exclusive offers.</p>
 
             <div className="flex overflow-hidden rounded-xl border border-gray-300 bg-white shadow-sm">
               <input type="email" placeholder="Enter your email" className="flex-1 px-4 py-3 text-gray-800 placeholder-gray-400 outline-none"/>
@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
 
             <div className="flex items-start gap-3">
-              <input type="checkbox" id="newsletter" className="mt-1 h-4 w-4 rounded border-gray-300 accent-red-600"/>
+              <input type="checkbox" id="newsletter" className="mt-1 h-4 w-4 rounded border-gray-300 accent-black"/>
 
               <label htmlFor="newsletter" className="text-sm leading-5 text-gray-400">
                 I'm okay with receiving emails and having my activity tracked to improve my experience.
