@@ -1,122 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import React, { useEffect, useRef, useState } from 'react';
+import './Timeline.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+function ScrollSquare({ text, imgSrc }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const squareRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+          setIsVisible(entry.isIntersecting);
+      },
+      {threshold: 0.3,
+      rootMargin: "-20px 0px -20px 0px"
+      }
+    );
+
+    if (squareRef.current) {
+      observer.observe(squareRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+    <div 
+      ref={squareRef} 
+      className={`square ${isVisible ? 'fade-in' : ''}`}
+    >
+      {imgSrc ? (
+        <img src={imgSrc} alt={text} className="square-image" />
+      ) : (
+        <span>{text}</span>
+      )}
+    </div>
+  );
 }
+export default function App() {
+  const steps = [
+    { id: 1, text: "Application", img: "https://picsum.photos" },
+    { id: 2, text: "Evaluation", img: "https://picsum.photos" },
+    { id: 3, text: "Deep Dive", img: "https://picsum.photos" },
+    { id: 4, text: "Demo Day", img: "https://picsum.photos" }
+  ];
 
-export default App
+  return (
+    <div className="app-container">
+      <div className="timeline-container">
+        <div className="timeline-line"></div>
+        {steps.map((step) => (
+          <div key={step.id} className="timeline-row">
+            <ScrollSquare text={step.text} imgSrc={step.img} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
