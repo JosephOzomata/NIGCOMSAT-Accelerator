@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 import React, { useEffect, useRef, useState } from 'react';
-=======
->>>>>>> 12ee9448c84a89dbf34f223ee72e101f76d1e68c
-
-import React from 'react';
 import { motion } from 'framer-motion';
 
 function ScrollSquare({ text, number, isEven }) {

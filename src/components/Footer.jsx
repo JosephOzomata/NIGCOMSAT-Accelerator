@@ -27,8 +27,8 @@ const Footer = () => {
         </div>
         <div className='flex justify-center items-center'>
             
-                {/* <img src={logo} alt="Logo" className='w-full h-full object-cover rounded-full'/> */}
-                <video src={livelogo} autoPlay loop muted className="w-60 h-60 object-cover "/>
+          {/* <img src={logo} alt="Logo" className='w-full h-full object-cover rounded-full'/> */}
+          <video src={livelogo} autoPlay loop muted className="w-60 h-60 object-cover "/>
             
         </div>
         <div className="max-w-md space-y-5">
