@@ -1,19 +1,35 @@
 
-// import launchpadImage from "../assets/images/launchpad.png";
+// import launchpadImage from "..images/launchpad.png";
+import React from 'react'
+import { motion } from 'framer-motion'
 
 function Launchpad() {
   return (
 
-    <section className="bg-[#F7F3EB] py-24 px-16">
-      <div className="max-w-7xl mx-auto flex items-center gap-20">
-        <div className="w-[55%]">
+    <div className="bg-[#F7F3EB] py-24 px-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 flex items-center gap-20">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.75, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{duration: 0.5}}
+         className="w-full">
           <img
-            src={launchpadImage}
+            // src={launchpadImage}
             alt="Launchpad"
-            className="w-full h-[700px] object-cover rounded-[30px]"
+            className="w-full object-cover rounded-[30px]"
          />
 
-         <div className="w-[45%]">
+
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 1, x: 50 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{duration: 0.5, delay: 0.2, ease: "easeInOut"}}
+         className="w-full">
+
+
+         <div className="w-full">
           <p className="uppercase text-[#2166D1] tracking-widest font-semibold mb-3">
             NIGCOMSAT Accelerator
           </p>
@@ -37,12 +53,11 @@ function Launchpad() {
           </button>
 
          </div>
-
-        </div>
+        </motion.div>
 
       </div>
 
-    </section> 
+    </div> 
 
   );
 }
