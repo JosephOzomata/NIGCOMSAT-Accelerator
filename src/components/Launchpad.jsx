@@ -4,14 +4,14 @@
 function Launchpad() {
   return (
 
-    <section className="bg-[#F7F3EB] py-24 px-16">
+   <section className="bg-[#F7F3EB] py-24 px-16">
       <div className="max-w-7xl mx-auto flex items-center gap-20">
         <div className="w-[55%]">
-          <img
+          {/*<img
             src={launchpadImage}
             alt="Launchpad"
             className="w-full h-[700px] object-cover rounded-[30px]"
-         />
+         />*/}
 
          <div className="w-[45%]">
           <p className="uppercase text-[#2166D1] tracking-widest font-semibold mb-3">
