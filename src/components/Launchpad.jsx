@@ -4,59 +4,44 @@
 function Launchpad() {
   return (
 
-    <section className="bg-[#F7F3EB] px-20 py-20">
-      <div className="flex items-start gap-16">
-
-        <div className="w-[50%]">
-          {/* <img
+    <section className="bg-[#F7F3EB] py-24 px-16">
+      <div className="max-w-7xl mx-auto flex items-center gap-20">
+        <div className="w-[55%]">
+          <img
             src={launchpadImage}
             alt="Launchpad"
-            className="w-full h-[700px] object-cover rounded-3xl"
-         /> */}
-        </div>
+            className="w-full h-[700px] object-cover rounded-[30px]"
+         />
 
-        {/* Right Side - Content */}
-        <div className="w-[50%]">
+         <div className="w-[45%]">
+          <p className="uppercase text-[#2166D1] tracking-widest font-semibold mb-3">
+            NIGCOMSAT Accelerator
+          </p>
 
-          <h2 className="text-[47px] font-bold text-[#2166D1] leading-tight mb-6">
-            We do more than accelerate,
-           we are a national launchpad
-         </h2>
+          <h2 className="text-[60px] font-bold leading-tight text-[#2166D1] mb-6">
+            Build.
+            <br />
+            Launch.
+            <br />
+            Scale.
+          </h2>
 
-         <a
-            href="/"
-            className="text-xl font-medium hover:underline inline-block mb-12"
-          >
-            How the program works →
-          </a>
+          <p className="text-xl text-gray-700 leading-9 mb-10">
+            More than an accelerator—we're a launchpad for ambitious founders,
+            providing the mentorship, partnerships, and national infrastructure
+            needed to transform bold ideas into lasting impact.
+          </p>
 
-          <div className="grid grid-cols-2 gap-7 text-md leading-7">
+          <button className="bg-[#2166D1] text-white px-8 py-4 rounded-full hover:bg-blue-800 transition duration-300">
+            Join the Accelerator
+          </button>
 
-            <div className="space-y-6">
-              <p>
-                The NIGCOMSAT accelerator gives you an exclusive stamp of partnership with Nigeria's national satellite operator, letting you build and validate your product directly on our infrastructure.
-              </p>
-
-              <p>
-                From day one, you'll plug into a global market network and get one-on-one mentorship from VCs, CTOs, and tech leaders. Best of all, it's completely free-no application fees, no equity taken, and you keep 100% of your IP.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <p>
-                A NigComSat-endorsed startup walks into procurement conversations, investor meetings, and partnership negotiations with something most early-stage companies spend years trying to earn: legitimacy at a national scale.
-              </p>
-
-              <p>
-                Combined with our zero-cost, zero-equity, zero-IP-claim model, the Accelerator is built entirely around your growth—not ours.
-             </p>
-            </div>
-
-          </div>
+         </div>
 
         </div>
 
       </div>
+
     </section> 
 
   );
