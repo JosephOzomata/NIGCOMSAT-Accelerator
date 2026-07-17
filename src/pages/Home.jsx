@@ -7,10 +7,8 @@ import StepsTimeline from '../components/StepsTimeline'
 const Home = () => {
   return (
     <>
-      <NavBar />
       <StepsTimeline />
       <Launchpad />
-      <Footer />
     </>
   )
 }
