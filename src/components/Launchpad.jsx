@@ -4,6 +4,7 @@
 function Launchpad() {
   return (
 
+<<<<<<< HEAD
     <section className="bg-[#F7F3EB] px-20 py-20">
       <div className="flex items-start gap-16">
 
@@ -14,6 +15,16 @@ function Launchpad() {
             className="w-full h-[700px] object-cover rounded-3xl"
          /> */}
         </div>
+=======
+   <section className="bg-[#F7F3EB] py-24 px-16">
+      <div className="max-w-7xl mx-auto flex items-center gap-20">
+        <div className="w-[55%]">
+          {/*<img
+            src={launchpadImage}
+            alt="Launchpad"
+            className="w-full h-[700px] object-cover rounded-[30px]"
+         />*/}
+>>>>>>> 42ccc329e1fa98511faa29b6b08a1c80f5a20f8a
 
         {/* Right Side - Content */}
         <div className="w-[50%]">
