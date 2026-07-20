@@ -7,6 +7,7 @@ const Spacefest = () => {
     <>
       <AboutSpaceFest />
       <ClubScoring />
+      <SpotLightPage />
     </>
   )
 }
