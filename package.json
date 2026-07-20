@@ -22,11 +22,8 @@
     "react-dom": "^19.2.7",
     "react-icons": "^5.7.0",
     "react-router-dom": "^7.18.1",
-<<<<<<< HEAD
     "recharts": "^3.9.2",
-=======
     "swiper": "^14.0.5",
->>>>>>> 346eaeffb3f3e66850836e9ca03336b2078fe4ae
     "tailwindcss": "^4.3.2"
   },
   "devDependencies": {
