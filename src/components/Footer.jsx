@@ -8,18 +8,18 @@ const Footer = () => {
       <div className='grid grid-cols-3  gap-5 bg-gray-200 p-10'>
         <div className='grid gap-4'>
             <div>
-                <p className='text-sm text-[#8a8a8a]'>Abuja Nigeria</p>
-                <p className='text-sm text-[#8a8a8a]'>Obasanjo Space Center</p>
-                <p className='text-sm'>Umar Musa Yar'Adua Express Way</p>
+                <p className='text-lg text-[#8a8a8a]'>Abuja Nigeria</p>
+                <p className='text-lg text-[#8a8a8a]'>Obasanjo Space Center</p>
+                <p className='text-lg'>Umar Musa Yar'Adua Express Way</p>
                 <p>Lugbe, Abuja</p>
                 <p className='mt-6'>Abuja Office</p>
                 <p>+234 1 234 5678</p>
             </div>
 
             <div className='mt-5'>
-                <p className='text-sm text-[#8a8a8a]'>agos Regional Business Office</p>
-                <p className='text-sm text-[#8a8a8a]'>Awolowo Road, Opposite Lagos</p>
-                <p className='text-sm'>Motor Boat Club, South West Ikoyi,</p>
+                <p className='text-lg text-[#8a8a8a]'>agos Regional Business Office</p>
+                <p className='text-lg text-[#8a8a8a]'>Awolowo Road, Opposite Lagos</p>
+                <p className='text-lg'>Motor Boat Club, South West Ikoyi,</p>
                 <p className='mt-6'>Lagos, Nigeria</p>
                 <p>+234 1 234 5678</p>
             </div>
@@ -27,8 +27,8 @@ const Footer = () => {
         </div>
         <div className='flex justify-center items-center'>
             
-                {/* <img src={logo} alt="Logo" className='w-full h-full object-cover rounded-full'/> */}
-                <video src={livelogo} autoPlay loop muted className="w-60 h-60 object-cover "/>
+          {/* <img src={logo} alt="Logo" className='w-full h-full object-cover rounded-full'/> */}
+          <video src={livelogo} autoPlay loop muted className="w-60 h-60 object-cover "/>
             
         </div>
         <div className="max-w-md space-y-5">
@@ -48,6 +48,10 @@ const Footer = () => {
               <label htmlFor="newsletter" className="text-sm leading-5 text-gray-400">
                 I'm okay with receiving emails and having my activity tracked to improve my experience.
               </label>
+            </div>
+
+            <div className='grid grid-cols-4 gap-4'>
+              
             </div>
         </div>
       </div>

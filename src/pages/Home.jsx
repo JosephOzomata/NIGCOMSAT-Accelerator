@@ -12,7 +12,6 @@ const Home = () => {
       <SwiperCarousel/>
       <StepsTimeline />
       <Launchpad />
-      <Footer />
     </>
   )
 }
