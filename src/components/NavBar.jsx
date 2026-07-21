@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { Search, User } from 'lucide-react';
 // import logo from "../images/logo.jpeg";
 import livelogo from "../images/livelogo.webm";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [searchExpanded, setSearchExpanded] = useState(false);
@@ -21,12 +22,14 @@ const NavBar = () => {
                     SpaceFest
                     <div className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#1a1a1a] rounded-full"></div>
                   </button>
-                  <button
-                    className="relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all text-[#8a8a8a] hover:text-[#3a3a3a] hover:bg-[#f5f5f5]"
-                    tabindex="0"
-                  >
-                    About
-                  </button>
+                  <Link to="/spacefest">
+                    <button
+                      className="relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all text-[#8a8a8a] hover:text-[#3a3a3a] hover:bg-[#f5f5f5]"
+                      tabindex="0"
+                    >
+                      About
+                    </button>
+                  </Link>
                   <button
                     className="relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all text-[#8a8a8a] hover:text-[#3a3a3a] hover:bg-[#f5f5f5]"
                     tabindex="0"
@@ -35,12 +38,15 @@ const NavBar = () => {
                   </button>
                 </div>
                 {/* Logo */}
+                <Link to="/">
+                
                 <div className="flex  justify-center items-center gap-3">
                   {/* {logo} */}
                   
                     {/* <img src={logo} alt="" className="w-25 animate-pulse shadow-lg h-25 absolute overflow-hidden rounded-full bg-white" /> */}
                   <video src={livelogo} autoPlay loop muted className="w-25 h-25 absolute overflow-hidden rounded-full bg-white" />
                 </div>
+                </Link>
                 {/* Extras */}
                 <div className="hidden lg:flex justify-evenly items-center gap-1">
                   <button
