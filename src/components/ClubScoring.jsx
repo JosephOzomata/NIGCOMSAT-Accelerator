@@ -26,9 +26,9 @@ export default function ScorePieChart() {
         <p className="text-slate-600 font-medium text-sm">Each club's final position was determined by combining expert evaluation and public participation.</p>
       </header>
       
-      <div className="w-full max-w-xl flex flex-col items-center gap-16">
+      <div className="w-full max-w-xl flex flex-col items-center gap-4">
         
-        <div className="w-full h-[320px] flex items-center justify-center">
+        <div className="w-full h-[240px] flex items-center justify-center">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart margin={{ top: 20, right: 100, bottom: 20, left: 157 }}>
               <Pie
