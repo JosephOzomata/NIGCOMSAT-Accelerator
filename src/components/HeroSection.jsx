@@ -1,6 +1,6 @@
 import heroImage from "../images/hero.png";
 
-function Hero (){
+function HeroSection (){
    return(
       <section className="bg-[#F7F3EB] min-h-screen">
          <div className="max-w-7xl mx-auto px-8 py-20">
@@ -9,11 +9,13 @@ function Hero (){
                <div>
 
                  
-                  <div className="inline-block bg-gray-200 text-blue-600 rounded-full px-4 py-2 mb-6">
-                     NigComSat • 20th Anniversary • 2026
-                  </div>
-                 
+                  <div className="flex items-center gap-3 mb-8">
+                     <div className="w-12 h-[2px] bg-[#2166D1]"></div>
 
+                     <p className="uppercase tracking-[0.25em] text-[#2166D1] text-sm font-semibold">
+                        20th Anniversary • 2026
+                     </p>
+                  </div>
                  
                  <h1 className="text-7xl font-bold text-blue-600 leading-none mb-6">
                      SpaceFest
@@ -27,19 +29,6 @@ function Hero (){
                      bringing together the next generation of space scientists,
                      engineers, policy leaders and innovators.
                   </p>
-
-                  
-                  <div className="flex gap-5">
- 
-                     <button className="bg-blue-600 text-white px-8 py-4 rounded-full">
-                       Learn More
-                     </button>
-
-                     <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full">
-                        View Winners
-                     </button>
-
-                  </div>
                 
                </div>
               
@@ -87,4 +76,4 @@ function Hero (){
    );
 }
 
-export default Hero
+export default HeroSection
