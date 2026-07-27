@@ -3,7 +3,7 @@ import launchpadImage from "../images/launchpad.png";
 
 function Launchpad() {
   return (
-    <section className="bg-[#F7F3EB] py-24 px-16">
+    <section className="bg-gray-200 py-24 px-16">
       <div className="max-w-7xl mx-auto flex items-center gap-20">
         <div className="w-[55%]">
           <img

@@ -8,6 +8,7 @@ import Spacefest from './pages/Spacefest'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
+import About from './pages/About'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/spacefest" element={<Spacefest />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </Router>

@@ -1,6 +1,6 @@
 import heroImage from "../images/hero.png";
 
-function Hero (){
+function HeroSection (){
    return(
       <section className="bg-[#F7F3EB] min-h-screen">
          <div className="max-w-7xl mx-auto px-8 py-20">
@@ -87,4 +87,4 @@ function Hero (){
    );
 }
 
-export default Hero
+export default HeroSection
