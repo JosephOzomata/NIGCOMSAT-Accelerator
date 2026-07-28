@@ -3,7 +3,7 @@ import HeroSection from '../components/HeroSection'
 import AboutSpaceFest from '../components/AboutSpaceFest'
 import SpotLightPage from '../components/SpotLightPage'
 import ClubScoring from '../components/ClubScoring'
-import HeroSection from '../components/HeroSection'
+import CompetitionFormat from '../components/CompetitionFormat'
 
 
 const Spacefest = () => {
@@ -11,6 +11,7 @@ const Spacefest = () => {
     <>
       <HeroSection />
       <AboutSpaceFest />
+      <CompetitionFormat />
       <ClubScoring />
       <SpotLightPage />
     </>
