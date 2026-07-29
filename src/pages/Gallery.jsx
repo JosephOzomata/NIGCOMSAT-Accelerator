@@ -135,7 +135,7 @@ const Gallery = () => {
               grid-cols-1
               sm:grid-cols-2
               lg:grid-cols-3
-              xl:grid-cols-4
+              xl:grid-cols-3
               gap-6
               "
             >
@@ -174,7 +174,7 @@ const Gallery = () => {
               columns-1
               sm:columns-2
               lg:columns-3
-              xl:columns-4
+              xl:columns-3
               gap-5
               space-y-5
               "
@@ -217,7 +217,7 @@ const Gallery = () => {
                     "
                   />
 
-                  <div
+                  {/* <div
                     className="
                     absolute
                     inset-0
@@ -228,7 +228,7 @@ const Gallery = () => {
                     from-black/50
                     to-transparent
                     "
-                  />
+                  /> */}
                 </motion.div>
               ))}
             </motion.div>
