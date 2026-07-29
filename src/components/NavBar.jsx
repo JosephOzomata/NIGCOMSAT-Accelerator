@@ -140,7 +140,7 @@ const NavBar = () => {
                     )}
                   </NavLink>
 
-                  <NavLink to="/div">
+                  <NavLink to="/gallery">
                     {({ isActive }) => (
                       <button
                         className={`relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all ${
