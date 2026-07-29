@@ -12,6 +12,8 @@ const UploadButton = ({ onClick, disabled }) => {
             text-white
             font-semibold
             transition
+            shadow-md
+            disabled:cursor-not-allowed
             disabled:bg-gray-400
             "
         >

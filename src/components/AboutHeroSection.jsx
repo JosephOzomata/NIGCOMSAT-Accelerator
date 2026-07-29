@@ -7,7 +7,7 @@ function AboutHeroSection() {
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <div>
                         <div className="inline-block bg-white rounded-full shadow-sm mb-5">
-                            <p className="text-[#2166D1] font-medium tracking-wide">
+                            <p className="text-[#2166D1] p-1 font-medium tracking-wide">
                                 About the NIGCOMSAT Accelerator
                             </p>
                         </div>

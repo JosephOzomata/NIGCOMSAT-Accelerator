@@ -1,12 +1,31 @@
+import { useState } from "react";
 import React from 'react'
 // import logo from "../images/logo.jpeg";
 import livelogo from "../images/livelogo.webm";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const [clickCount, setClickCount] = useState(0);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    setClickCount((prev) => {
+      const newCount = prev + 1;
+
+      if (newCount === 5) {
+        navigate("/upload");
+        return 0;
+      }
+
+      return newCount;
+    });
+  };
+
+
   return (
     <>
-      <div className='grid grid-cols-3  gap-5 bg-gray-200 p-10'>
-        <div className='grid gap-4'>
+      <div className='grid lg:grid-cols-3 sm:grid-cols-1  gap-5 bg-gray-200 p-10'>
+        <div className='grid sm:grid-cols-2 lg:grid-cols-1 gap-4'>
             <div>
                 <p className='text-lg text-[#8a8a8a]'>Abuja Nigeria</p>
                 <p className='text-lg text-[#8a8a8a]'>Obasanjo Space Center</p>
@@ -16,8 +35,8 @@ const Footer = () => {
                 <p>+234 1 234 5678</p>
             </div>
 
-            <div className='mt-5'>
-                <p className='text-lg text-[#8a8a8a]'>agos Regional Business Office</p>
+            <div className='lg:mt-5'>
+                <p className='text-lg text-[#8a8a8a]'>Lagos Regional Business Office</p>
                 <p className='text-lg text-[#8a8a8a]'>Awolowo Road, Opposite Lagos</p>
                 <p className='text-lg'>Motor Boat Club, South West Ikoyi,</p>
                 <p className='mt-6'>Lagos, Nigeria</p>
@@ -28,7 +47,7 @@ const Footer = () => {
         <div className='flex justify-center items-center'>
             
           {/* <img src={logo} alt="Logo" className='w-full h-full object-cover rounded-full'/> */}
-          <video src={livelogo} autoPlay loop muted className="w-60 h-60 object-cover "/>
+          <video onClick={handleClick} src={livelogo} autoPlay loop muted className="w-60 h-60 object-cover "/>
             
         </div>
         <div className="max-w-md space-y-5">
