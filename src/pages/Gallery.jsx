@@ -123,9 +123,9 @@ const Gallery = () => {
           </div>
 
 
-          <div className="mb-8">
+          {/* <div className="mb-8">
             <span className="text-gray-600">{images.length} Images</span>
-          </div>
+          </div> */}
 
 
           {loading ? (
@@ -163,9 +163,9 @@ const Gallery = () => {
             >
               <h2 className="text-2xl font-semibold">No Images Found</h2>
 
-              <p className="text-gray-500 mt-3">
+              {/* <p className="text-gray-500 mt-3">
                 Upload some images to Cloudinary.
-              </p>
+              </p> */}
             </div>
           ) : (
             <motion.div
@@ -213,7 +213,7 @@ const Gallery = () => {
                     object-cover
                     transition
                     duration-500
-                    group-hover:scale-105
+                    
                     "
                   />
 
