@@ -12,6 +12,7 @@ import About from './pages/About'
 import Apply from './pages/Apply'
 import Upload from './pages/Upload'
 import Gallery from './pages/Gallery'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />

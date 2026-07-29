@@ -328,27 +328,7 @@ const Gallery = () => {
 
 
 
-              <a
-                href={selected.secure_url}
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="
-                absolute
-                top-6
-                left-6
-                text-white
-                bg-white/10
-                hover:bg-white/20
-                p-3
-                rounded-full
-                transition
-                z-50
-                "
-              >
-                <Download size={24} />
-              </a>
+              
 
 
 

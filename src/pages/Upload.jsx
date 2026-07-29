@@ -65,7 +65,7 @@ const Upload = () => {
     <>
       <Toaster position="top-right" />
 
-      <div className="min-h-screen bg-slate-100 py-16">
+      <div className="min-h-screen bg-slate-100 pt-30 py-16">
 
         <div className="max-w-7xl mx-auto px-6">
 
@@ -81,9 +81,7 @@ const Upload = () => {
                 Upload Gallery Images
               </h1>
 
-              <p className="mt-3 text-gray-500">
-                Upload beautiful moments to your Cloudinary gallery.
-              </p>
+              
 
             </div>
 
