@@ -3,7 +3,7 @@ import HeroSection from '../components/HeroSection'
 import AboutSpaceFest from '../components/AboutSpaceFest'
 import SpotLightPage from '../components/SpotLightPage'
 import ClubScoring from '../components/ClubScoring'
-import HeroSection from '../components/HeroSection'
+// import HeroSection from '../components/HeroSection'
 
 
 const Spacefest = () => {

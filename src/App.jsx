@@ -9,6 +9,8 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import About from './pages/About'
+import Upload from './pages/Upload'
+import Gallery from './pages/Gallery'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +23,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/spacefest" element={<Spacefest />} />
           <Route path="/about" element={<About />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
         <Footer />
       </Router>

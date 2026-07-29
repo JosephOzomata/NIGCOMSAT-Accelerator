@@ -39,8 +39,8 @@ export default function SwiperCarousel() {
       navigation
       pagination={{ clickable: true }}
       autoplay={{
-        delay: 6000,
-        disableOnInteraction: false,
+        delay: 10000,
+        disableOnInteraction: true,
       }}
       speed={1800}
       loop
