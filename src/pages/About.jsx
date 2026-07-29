@@ -6,9 +6,9 @@ import BuildingToward from '../components/BuildingToward'
 const About = () => {
   return (
     <>
+       <AboutHeroSection />
        <BuildingToward />
        <Card />
-       <AboutHeroSection />
     </>
   )
 }

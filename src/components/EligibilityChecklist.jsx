@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function EligibilityChecklist() {
+function EligibilityChecklist() {
   const checklistItems = [
     { id: 1, text: "01. Legally registered with the CAC" },
     { id: 2, text: "02. Have a working MVP or prototype" },
@@ -81,3 +81,5 @@ export default function EligibilityChecklist() {
     </div>
   );
 }
+
+export default EligibilityChecklist

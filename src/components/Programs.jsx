@@ -1,7 +1,8 @@
+import React from "react";
 
 function Programs() {
     return (
-        <section className="bg-[#FFFFFF] py-24 px-16">
+        <section className="bg-[#F7F3EB] py-24 px-16">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-6xl font-bold text-[#2166D1] text-center mb-20">
                     Program Terms
