@@ -16,16 +16,14 @@ const NavBar = () => {
               <div className="grid grid-cols-3 items-center">
                 {/* Pages */}
                 <div className="hidden lg:flex justify-evenly items-center gap-1">
+                  <button
+                    className="relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all text-[#1a1a1a] font-medium"
+                    tabindex="0"
+                  >
+                    SpaceFest
+                    <div className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#1a1a1a] rounded-full"></div>
+                  </button>
                   <Link to="/spacefest">
-                    <button
-                      className="relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all text-[#1a1a1a] font-medium"
-                      tabindex="0"
-                    >
-                      SpaceFest
-                      <div className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#1a1a1a] rounded-full"></div>
-                    </button>
-                  </Link>
-                  <Link to="/about">
                     <button
                       className="relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all text-[#8a8a8a] hover:text-[#3a3a3a] hover:bg-[#f5f5f5]"
                       tabindex="0"
@@ -33,14 +31,12 @@ const NavBar = () => {
                       About
                     </button>
                   </Link>
-                  <Link to="/apply">
-                    <button
-                      className="relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all text-[#8a8a8a] hover:text-[#3a3a3a] hover:bg-[#f5f5f5]"
-                      tabindex="0"
-                    >
-                      Apply
-                    </button>
-                  </Link>
+                  <button
+                    className="relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all text-[#8a8a8a] hover:text-[#3a3a3a] hover:bg-[#f5f5f5]"
+                    tabindex="0"
+                  >
+                    Apply
+                  </button>
                 </div>
                 {/* Logo */}
                 <Link to="/">

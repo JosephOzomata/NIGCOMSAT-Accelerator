@@ -39,7 +39,7 @@ export default function App() {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-[#F7F3EB]">
+    <div className="w-full min-h-screen bg-gray-200">
       <header className="text-center py-16 px-5">
         <h1 className="text-4xl font-black text-slate-800 mb-2">What the project looks like</h1>
       </header>
