@@ -32,12 +32,14 @@ const NavBar = () => {
                         About
                       </button>
                     </Link>
+                    <Link to="apply">
                   <button
                     className="relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all text-[#8a8a8a] hover:text-[#3a3a3a] hover:bg-[#f5f5f5]"
                     tabindex="0"
                   >
                     Apply
                   </button>
+                  </Link>
                 </div>
                 {/* Logo */}
                 <Link to="/">

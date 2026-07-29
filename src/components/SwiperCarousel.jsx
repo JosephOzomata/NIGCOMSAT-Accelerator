@@ -1,32 +1,32 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/navigation";
+
 import "swiper/css/pagination";
 
 const slides = [
   {
     type: "video",
-    src: "/videos/GRIDMAN(DUB)1.mp4",
+    src: "/videos/VID-20260720-WA0026.mp4",
     title: "Episode 1",
     description: "Introduction to the first episode of Gridman.",
   },
   {
     type: "video",
-    src: "/videos/GRIDMAN(DUB)2.mp4",
+    src: "/videos/VID-20260720-WA0027.mp4",
     title: "Episode 2",
     description: "Understanding what Gridman is about.",
   },
   {
     type: "video",
-    src: "/videos/GRIDMAN(DUB)4.mp4",
+    src: "/videos/VID-20260720-WA0028.mp4",
     title: "Episode 4",
     description: "Alias on who the real culprit is.",
   },
   {
     type: "video",
-    src: "/videos/GRIDMAN(DUB)6.mp4",
+    src: "/videos/VID-20260720-WA0029.mp4",
     title: "Episode 6",
     description: "Our classmate is the antagonist of our world.",
   },
@@ -35,11 +35,11 @@ const slides = [
 export default function SwiperCarousel() {
   return (
     <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
-      navigation
+      modules={[ Pagination, Autoplay]}
+      
       pagination={{ clickable: true }}
       autoplay={{
-        delay: 6000,
+        delay: 10000,
         disableOnInteraction: false,
       }}
       speed={1800}

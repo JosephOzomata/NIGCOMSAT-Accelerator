@@ -70,7 +70,7 @@ export default function OrganizationalSpotlight() {
           position: 'absolute',
           inset: 0,
           pointerEvents: 'none',
-          background: `radial-gradient(700px circle at var(--mouse-x) var(--mouse-y), ${slidesData[activeSlide].glowColor}, transparent 85%)`,
+          background: `(700px circle at var(--mouse-x) var(--mouse-y), ${slidesData[activeSlide].glowColor}, transparent 85%)`,
           transition: 'background 0.5s ease-in-out' // Smoothly interpolates lighting colors during slide jumps
         }} 
       />
