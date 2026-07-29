@@ -18,10 +18,12 @@ export default async function handler(req, res) {
       resources: result.resources,
     });
   } catch (error) {
-    console.error(error);
+  console.error("Cloudinary Error:", error);
 
-    return res.status(500).json({
-      error: "Failed to fetch images",
-    });
-  }
+  return res.status(500).json({
+    message: error.message,
+    error,
+  });
+}
+   
 }

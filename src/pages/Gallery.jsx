@@ -28,7 +28,7 @@ const Gallery = () => {
       const data = await res.json();
 
       setImages(data.resources || []);
-    } catch (err) {
+    } catch (err) { 
       console.error(err);
     } finally {
       setLoading(false);
@@ -86,17 +86,14 @@ const Gallery = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-slate-100 py-20">
+      <div className="min-h-screen bg-slate-100 pt-30 py-20">
         <div className="max-w-7xl mx-auto px-6">
-          {/* HEADER */}
 
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5 mb-12">
             <div>
               <h1 className="text-5xl font-bold text-slate-800">Gallery</h1>
 
-              <p className="text-gray-500 mt-2">
-                Browse uploaded images from Cloudinary.
-              </p>
+              
             </div>
 
             <button
@@ -125,13 +122,11 @@ const Gallery = () => {
             </button>
           </div>
 
-          {/* IMAGE COUNT */}
 
-          <div className="mb-8">
+          {/* <div className="mb-8">
             <span className="text-gray-600">{images.length} Images</span>
-          </div>
+          </div> */}
 
-          {/* LOADING */}
 
           {loading ? (
             <div
@@ -140,7 +135,7 @@ const Gallery = () => {
               grid-cols-1
               sm:grid-cols-2
               lg:grid-cols-3
-              xl:grid-cols-4
+              xl:grid-cols-3
               gap-6
               "
             >
@@ -168,9 +163,9 @@ const Gallery = () => {
             >
               <h2 className="text-2xl font-semibold">No Images Found</h2>
 
-              <p className="text-gray-500 mt-3">
+              {/* <p className="text-gray-500 mt-3">
                 Upload some images to Cloudinary.
-              </p>
+              </p> */}
             </div>
           ) : (
             <motion.div
@@ -179,7 +174,7 @@ const Gallery = () => {
               columns-1
               sm:columns-2
               lg:columns-3
-              xl:columns-4
+              xl:columns-3
               gap-5
               space-y-5
               "
@@ -218,11 +213,11 @@ const Gallery = () => {
                     object-cover
                     transition
                     duration-500
-                    group-hover:scale-105
+                    
                     "
                   />
 
-                  <div
+                  {/* <div
                     className="
                     absolute
                     inset-0
@@ -233,7 +228,7 @@ const Gallery = () => {
                     from-black/50
                     to-transparent
                     "
-                  />
+                  /> */}
                 </motion.div>
               ))}
             </motion.div>
@@ -264,7 +259,7 @@ const Gallery = () => {
               "
               onClick={closeImage}
             >
-              {/* CLOSE BUTTON */}
+
 
               <button
                 onClick={closeImage}
@@ -284,7 +279,7 @@ const Gallery = () => {
                 <X size={28} />
               </button>
 
-              {/* PREVIOUS */}
+
 
               {images.length > 1 && (
                 <button
@@ -308,7 +303,6 @@ const Gallery = () => {
                 </button>
               )}
 
-              {/* NEXT */}
 
               {images.length > 1 && (
                 <button
@@ -332,7 +326,7 @@ const Gallery = () => {
                 </button>
               )}
 
-              {/* DOWNLOAD */}
+
 
               <a
                 href={selected.secure_url}
@@ -356,7 +350,7 @@ const Gallery = () => {
                 <Download size={24} />
               </a>
 
-              {/* IMAGE */}
+
 
               <motion.img
                 key={selected.public_id}
