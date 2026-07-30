@@ -4,7 +4,7 @@ function HeroSection (){
    return(
       <section className="bg-[#F7F3EB] pt-10 min-h-screen">
          <div className="max-w-7xl mx-auto px-8 py-20">
-            <div className="grid grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-12 items-center">
                
                <div>
 
@@ -42,7 +42,7 @@ function HeroSection (){
 
             </div>
 
-            <div className="grid grid-cols-4 gap-6 mt-20">
+            <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-6 mt-20">
 
                {/* Card 1 */}
                <div className="bg-white rounded-2xl p-6 shadow">

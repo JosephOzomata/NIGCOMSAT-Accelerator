@@ -96,7 +96,7 @@ const Gallery = () => {
               
             </div>
 
-            <button
+            {/* <button
               onClick={() => {
                 setRefreshing(true);
                 fetchGallery();
@@ -119,7 +119,7 @@ const Gallery = () => {
                 className={refreshing ? "animate-spin" : ""}
               />
               Refresh
-            </button>
+            </button> */}
           </div>
 
 
