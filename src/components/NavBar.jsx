@@ -227,7 +227,7 @@ const NavBar = () => {
 
                       {showDropdown && (
                         <div className=" bg-transparent rounded-xl  overflow-hidden">
-                          <NavLink to="" className="block hover:bg-gray-100 cursor-pointer p-3">
+                          <NavLink to="/spacefest" className="block hover:bg-gray-100 cursor-pointer p-3">
                             Spacefest
                           </NavLink>
                           <p className="hover:bg-gray-100 cursor-pointer p-3">
