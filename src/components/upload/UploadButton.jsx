@@ -7,7 +7,7 @@ const UploadButton = ({ onClick, disabled }) => {
             w-full
             py-4
             rounded-xl
-            bg-blue-700
+            bg-blue-500
             hover:bg-blue-800
             text-white
             font-semibold
