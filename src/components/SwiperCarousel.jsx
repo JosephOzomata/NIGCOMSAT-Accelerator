@@ -8,13 +8,13 @@ import "swiper/css/pagination";
 const slides = [
   {
     type: "video",
-    src: "/videos/VID-20260720-WA0026.mp4",
+    src: "https://res.cloudinary.com/dul0ip9bh/video/upload/ilvkh1wobdj6tbh0g7kq.mp4",
     title: "Episode 1",
     description: "Introduction to the first episode of Gridman.",
   },
   {
     type: "video",
-    src: "/videos/VID-20260720-WA0027.mp4",
+    src: "https://res.cloudinary.com/dul0ip9bh/video/upload/zbuj7n2an9lygxyovcjz.mp4",
     title: "Episode 2",
     description: "Understanding what Gridman is about.",
   },
@@ -39,7 +39,7 @@ export default function SwiperCarousel() {
       
       pagination={{ clickable: true }}
       autoplay={{
-        delay: 10000,
+        delay: 11000,
         disableOnInteraction: true,
       }}
       speed={1800}
