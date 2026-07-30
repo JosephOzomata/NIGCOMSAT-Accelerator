@@ -80,8 +80,8 @@ export default function LeaderboardDashboard() {
 
         <div className="w-full md:w-1/2 flex flex-col justify-center min-h-[300px] md:mt-11">
           
-          <div className="w-full flex flex-row items-center justify-between gap-4">
-            <div className="w-[55%] h-[260px] flex items-center justify-start">
+          <div className="w-full grid lg:grid-cols-2 sm:grid-cols-1 gap-4">
+            <div className="w-full h-[260px] flex items-center justify-start">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
                   <Pie
@@ -119,7 +119,7 @@ export default function LeaderboardDashboard() {
               </ResponsiveContainer>
             </div>
 
-            <div className="w-[45%] flex flex-col gap-3.5 justify-center pl-2">
+            <div className="w-full flex flex-col gap-3.5 justify-center pl-2">
               {chartData.map((item, index) => (
                 <div key={index} className="flex items-start gap-2.5">
                   <div 

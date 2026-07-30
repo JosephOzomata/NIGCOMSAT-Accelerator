@@ -9,8 +9,8 @@ const slides = [
   {
     type: "video",
     src: "https://res.cloudinary.com/dul0ip9bh/video/upload/ilvkh1wobdj6tbh0g7kq.mp4",
-    title: "Episode 1",
-    description: "Introduction to the first episode of Gridman.",
+    title: "Nigcomsat Accelerator",
+    description: "",
   },
   {
     type: "video",
@@ -61,7 +61,7 @@ export default function SwiperCarousel() {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
 
-            <div className="absolute left-6 md:left-16 bottom-16 md:bottom-24 text-white z-10">
+            {/* <div className="absolute left-6 md:left-16 bottom-16 md:bottom-24 text-white z-10">
               <h1 className="text-4xl md:text-7xl font-extrabold">
                 {slide.title}
               </h1>
@@ -69,7 +69,7 @@ export default function SwiperCarousel() {
               <p className="mt-4 max-w-2xl text-lg md:text-2xl">
                 {slide.description}
               </p>
-            </div>
+            </div> */}
           </div>
         </SwiperSlide>
       ))}
