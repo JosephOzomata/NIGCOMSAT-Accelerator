@@ -3,7 +3,6 @@ import { ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 export default function LeaderboardDashboard() {
   
-  // 1. EDITABLE PIE CHART DATA: 5 equal items (20% each)
   const chartData = [
     { name: 'Research Rigour & Quality of Thinking', value: 20 },
     { name: 'Evidence of Original Work', value: 20 },
@@ -89,7 +88,7 @@ export default function LeaderboardDashboard() {
                     cx="50%"
                     cy="50%"
                     innerRadius={0}
-                    outerRadius={125}
+                    outerRadius={110}
                     dataKey="value"
                     labelLine={false}
                     label={({ cx, cy, midAngle, innerRadius, outerRadius, value }) => {

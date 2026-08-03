@@ -59,29 +59,29 @@ export default function App() {
   const steps = [
     {
       number: 1,
-      label: "Start here",
+      label: "Application",
       title: "Submit your application",
       description: "Share your idea, team background, and what you've built so far. We're looking for founders who are serious about solving real problems.",
       time: "~15 minutes"
     },
     {
       number: 2,
-      label: "Review phase",
+      label: "Evaluation",
       title: "Expert panel evaluation",
-      description: "A group of experienced founders and investors will review your submission. They'll look at your product, market fit, and team dynamics.",
+      description: "A group of VCs and industry experts will review your submission. They'll look at your product, market fit, and team dynamics.",
       time: "5-7 days"
     },
     {
       number: 3,
-      label: "Build mode",
-      title: "Product & business development",
+      label: "Deep Dive",
+      title: "Product refinement & Business development",
       description: "Selected teams get hands-on support. We'll help you refine your product, nail your messaging, and prepare for what comes next.",
       time: "4 weeks"
     },
     {
       number: 4,
-      label: "The big day",
-      title: "Demo Day",
+      label: "Demo Day",
+      title: "The Big Day",
       description: "Present to a room full of investors, journalists, and potential partners. This is where you show the world what you've built.",
       time: "Live event"
     }
