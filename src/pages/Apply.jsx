@@ -121,7 +121,7 @@ export default function MultiStepApplyPage() {
 
   if (isSubmitted) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-indigo-950 via-violet-900 to-indigo-900 p-4 pt-16 sm:p-8 sm:pt-24">
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-cornsilk-950 via-beige-900 to-white-900 p-4 pt-16 sm:p-8 sm:pt-24">
         <div className="relative w-full max-w-md overflow-hidden rounded-3xl bg-white shadow-2xl">
           <div className="bg-gradient-to-r from-amber-400 to-amber-500 px-8 py-10 text-center">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg">
@@ -158,13 +158,13 @@ export default function MultiStepApplyPage() {
   return (
     <div className="flex min-h-screen items-center justify-center from-cornsilk-950 p-4 pt-24 sm:p-8 sm:p-32">
       <div className="w-full max-w-xl rounded-3xl bg-white p-6 shadow-2xl sm:p-10">
-        <p className="mb-1 text-center text-xs font-bold uppercase tracking-[0.25em] text-amber-500">
-          NIGCOMSAT
+        <p className="mb-1 text-center text-4xl font-bold uppercase tracking-[0.25em] text-blue-500">
+          COHORT 3.0
         </p>
         <h1 className="mb-8 text-center text-2xl font-black text-slate-900 sm:text-3xl">
-          Apply for the{" "}
-          <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
-            Next Cohort
+          Apply {" "}
+          <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+            Now
           </span>
         </h1>
 
@@ -172,8 +172,8 @@ export default function MultiStepApplyPage() {
         <div className="relative mb-10 flex justify-between">
           <div className="absolute left-4 right-4 top-4 h-1 rounded-full bg-slate-100" />
           <div
-            className="absolute left-4 top-4 h-1 rounded-ful from-cyan-450 transition-all duration-500"
-            style={{ width: `calc(${fillPercent}% - ${fillPercent * 0.08}px)` }}
+            className="absolute left-4 top-4 h-1 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 transition-all duration-500"
+            style={{ width: `calc(${fillPercent}% - ${fillPercent * 0.225}px)` }}
           />
           {steps.map((label, i) => {
             const stepNum = i + 1;
@@ -186,7 +186,7 @@ export default function MultiStepApplyPage() {
                     done
                       ? "bg-indigo-600 text-white"
                       : active
-                      ? "scale-125 bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-lg shadow-indigo-300"
+                      ? "scale-125 bg-gradient-to-br from-blue-600 to-cyan-600 text-white shadow-lg shadow-indigo-300"
                       : "bg-slate-100 text-slate-400"
                   }`}
                 >
@@ -194,7 +194,7 @@ export default function MultiStepApplyPage() {
                 </div>
                 <span
                   className={`hidden text-[10px] font-bold sm:block ${
-                    currentStep >= stepNum ? "text-indigo-600" : "text-slate-400"
+                    currentStep >= stepNum ? "text-beige-600" : "text-slate-400"
                   }`}
                 >
                   {label}
