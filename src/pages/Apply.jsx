@@ -1,4 +1,11 @@
 import React, { useState } from "react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle2,
+  UploadCloud,
+  PartyPopper,
+} from "lucide-react";
 
 export default function MultiStepApplyPage() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -7,8 +14,8 @@ export default function MultiStepApplyPage() {
     fullName: "",
     email: "",
     phone: "",
-    role: "frontend",
-    experience: "mid",
+    role: "Yes",
+    experience: "Yes, We do!",
     coverLetter: "",
     portfolioUrl: "",
     videoName: "",
@@ -17,29 +24,35 @@ export default function MultiStepApplyPage() {
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const steps = ["Personal", "Qualification", "Attachments", "Review"];
+
+  const roleLabels = {
+    Yes: "Yes",
+    No: "No",
+    Maybe: "Maybe",
+  };
+
+  const experienceLabels = {
+    "Yes, We do!": "Yes, we do!",
+    "No, not at the moment": "No, not at the moment",
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
 
     if (errors[name]) {
-      setErrors((prev) => ({
-        ...prev,
-        [name]: "",
-      }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-
     if (!file) return;
 
     const videoEl = document.createElement("video");
-    videoEl.preload ="metadata"
+    videoEl.preload = "metadata";
 
     videoEl.onloadedmetadata = () => {
       window.URL.revokeObjectURL(videoEl.src);
@@ -47,38 +60,25 @@ export default function MultiStepApplyPage() {
       if (videoEl.duration > 60) {
         setErrors((prev) => ({
           ...prev,
-          video: "video must be 1 minute or shorter",
+          video: "Video must be 1 minute or shorter",
         }));
-
-        setFormData((prev) => ({
-          ...prev,
-          videoName:"",
-        }));
-      
+        setFormData((prev) => ({ ...prev, videoName: "" }));
         e.target.value = "";
         return;
       }
-      setFormData((prev) => ({
-        ...prev,
-        videoName: file.name,
-      }));
-        setErrors((prev) => ({
-          ...prev,
-          video: ""
-        }));
-      };
-      videoEl.src = URL.createObjectURL(file);
-    
+
+      setFormData((prev) => ({ ...prev, videoName: file.name }));
+      setErrors((prev) => ({ ...prev, video: "" }));
+    };
+
+    videoEl.src = URL.createObjectURL(file);
   };
 
   const validateStep = () => {
     const newErrors = {};
 
     if (currentStep === 1) {
-      if (!formData.fullName.trim()) {
-        newErrors.fullName = "Full Name is required";
-      }
-
+      if (!formData.fullName.trim()) newErrors.fullName = "Full name is required";
       if (!formData.email.trim()) {
         newErrors.email = "Email is required";
       } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
@@ -87,528 +87,321 @@ export default function MultiStepApplyPage() {
     }
 
     if (currentStep === 3) {
-      if (!formData.videoName) {
-        newErrors.resume = "1 minute video is required";
-      }
+      if (!formData.videoName) newErrors.video = "A 1-minute video is required";
     }
 
     setErrors(newErrors);
-
     return Object.keys(newErrors).length === 0;
   };
 
   const nextStep = (e) => {
     e.preventDefault();
-
-    if (validateStep() && currentStep < 4) {
+    if (validateStep() && currentStep < steps.length) {
       setCurrentStep((prev) => prev + 1);
     }
   };
 
   const prevStep = (e) => {
     e.preventDefault();
-
     setCurrentStep((prev) => prev - 1);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (validateStep()) {
-      setIsSubmitted(true);
-    }
+    if (validateStep()) setIsSubmitted(true);
   };
 
-  const roleLabels = {
-    frontend: "Frontend Engineer",
-    backend: "Backend Engineer",
-    uiux: "UI/UX Designer",
-  };
+  const fillPercent = ((currentStep - 1) / (steps.length - 1)) * 100;
 
-  const experienceLabels = {
-    junior: "Junior (0–2 years)",
-    mid: "Mid-Level (2–5 years)",
-    senior: "Senior (5+ years)",
-  };
-
-  const steps = ["Personal", "Qualification", "Attachments", "Review"];
-
-  const styles = {
-    canvas: {
-      minHeight: "100vh",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      background: " #f5f5dc6 ",
-      padding: "30px",
-      fontFamily: "'Poppins', 'Segoe UI', system-ui, sans-serif",
-      boxSizing: "border-box",
-    },
-
-    card: {
-      width: "100%",
-      maxWidth: "600px",
-      background: "#fff",
-      borderRadius: "24px",
-      padding: "40px",
-      boxShadow: "0 25px 50px -12px rgba(37, 99, 235, 0.45)",
-      boxSizing: "border-box",
-    },
-
-    stepBar: {
-      display: "flex",
-      justifyContent: "space-between",
-      position: "relative",
-      marginBottom: "36px",
-    },
-
-    stepLineTrack: {
-      position: "absolute",
-      top: "17px",
-      left: "17px",
-      right: "17px",
-      height: "4px",
-      background: "#f1f5f9",
-      borderRadius: "4px",
-      zIndex: 0,
-    },
-
-    stepLineFill: {
-      position: "absolute",
-      top: "17px",
-      left: "17px",
-      height: "4px",
-      background: "linear-gradient(90deg, #2563eb, #06b6d4)",
-      borderRadius: "4px",
-      zIndex: 1,
-      transition: "width 0.35s ease",
-      width: `calc(${((currentStep - 1) / 3) * 100}% - ${((currentStep - 1) / 3) * 34}px)`,
-    },
-
-    stepDotWrap: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      gap: "8px",
-      zIndex: 2,
-      position: "relative",
-    },
-
-    stepDot: (stepNum) => ({
-      width: "36px",
-      height: "36px",
-      borderRadius: "50%",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      fontWeight: "700",
-      fontSize: "14px",
-      color: currentStep >= stepNum ? "#fff" : "#94a3b8",
-      background:
-        currentStep >= stepNum
-          ? "linear-gradient(135deg, #2563eb, #06b6d4)"
-          : "#f1f5f9",
-      transform: currentStep === stepNum ? "scale(1.15)" : "scale(1)",
-      boxShadow:
-        currentStep === stepNum ? "0 6px 16px rgba(37,99,235,0.45)" : "none",
-      transition: "all 0.25s ease",
-    }),
-
-    stepDotLabel: (stepNum) => ({
-      fontSize: "11px",
-      fontWeight: "600",
-      color: currentStep >= stepNum ? "#2563eb" : "#94a3b8",
-    }),
-
-    title: {
-      textAlign: "center",
-      fontSize: "26px",
-      fontWeight: "800",
-      marginBottom: "6px",
-      color: "#1e1b2e",
-    },
-
-    titleAccent: {
-      background: "linear-gradient(90deg, #2563eb, #7c3aed)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      backgroundClip: "text",
-    },
-
-    subtitle: {
-      textAlign: "center",
-      color: "#94a3b8",
-      marginBottom: "28px",
-      fontSize: "14px",
-      fontWeight: "500",
-    },
-
-    fieldGroup: {
-      display: "flex",
-      flexDirection: "column",
-      marginBottom: "20px",
-    },
-
-    label: {
-      marginBottom: "8px",
-      fontWeight: "700",
-      fontSize: "13px",
-      color: "#334155",
-    },
-
-    input: (error) => ({
-      padding: "12px 14px",
-      borderRadius: "10px",
-      border: error ? "2px solid #f43f5e" : "2px solid #e2e8f0",
-      fontSize: "14px",
-      outline: "none",
-      transition: "border-color 0.2s ease",
-    }),
-
-    textarea: {
-      padding: "12px 14px",
-      borderRadius: "10px",
-      border: "2px solid #e2e8f0",
-      minHeight: "120px",
-      fontSize: "14px",
-      outline: "none",
-      resize: "vertical",
-      fontFamily: "inherit",
-    },
-
-    errorText: {
-      color: "#f43f5e",
-      fontSize: "12px",
-      marginTop: "5px",
-      fontWeight: "600",
-    },
-
-    btnContainer: {
-      display: "flex",
-      justifyContent: "space-between",
-      marginTop: "30px",
-      gap: "12px",
-    },
-
-    backBtn: {
-      flex: 1,
-      padding: "13px",
-      border: "2px solid #e2e8f0",
-      borderRadius: "12px",
-      background: "#fff",
-      color: "#475569",
-      cursor: "pointer",
-      fontWeight: "700",
-      fontSize: "14px",
-    },
-
-    nextBtn: {
-      flex: 1,
-      padding: "13px",
-      border: "none",
-      borderRadius: "12px",
-      background: "linear-gradient(135deg, #2563eb, #7c3aed)",
-      color: "#fff",
-      cursor: "pointer",
-      fontWeight: "700",
-      fontSize: "14px",
-      boxShadow: "0 8px 20px rgba(37,99,235,0.4)",
-    },
-
-    submitBtn: {
-      flex: 1,
-      padding: "13px",
-      border: "none",
-      borderRadius: "12px",
-      background: "linear-gradient(135deg, #06b6d4, #7c3aed)",
-      color: "#fff",
-      cursor: "pointer",
-      fontWeight: "700",
-      fontSize: "14px",
-      boxShadow: "0 8px 20px rgba(6,182,212,0.4)",
-    },
-
-    reviewBox: {
-      background: "#eff6ff",
-      padding: "22px",
-      borderRadius: "16px",
-      border: "2px solid #dbeafe",
-    },
-
-    reviewItem: {
-      display: "flex",
-      justifyContent: "space-between",
-      marginBottom: "12px",
-      fontSize: "14px",
-    },
-
-    reviewLabel: {
-      color: "#2563eb",
-      fontWeight: "700",
-    },
-  };
+  const inputBase =
+    "w-full rounded-xl border-2 px-4 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:ring-4";
+  const inputOk =
+    "border-slate-200 focus:border-indigo-500 focus:ring-indigo-100";
+  const inputErr = "border-rose-400 focus:border-rose-500 focus:ring-rose-100";
 
   if (isSubmitted) {
     return (
-      
-      <div style={styles.canvas}>
-        <style>{`
-          .glow-btn{
-          box-shadow: 0 8px 20px rgba(37,99,235,0,4);
-            transition:box-shadow 0.25s ease, transform 0.15 ease;
-          }
-          glow-hover{
-          box-shadow: 0 0 20px 6px rgba(37,99,235,0,6), 0 8px 20px rgba(37,99,235,0,4); 
-          transform: translateY(-2px);
-          }
-          .glow-btn:active{
-          box-shadow: 0 0 10px3px rgba(37,99,235,0,8);
-          }
-          `}</style>
-        <div style={{ ...styles.card, textAlign: "center" }}>
-          <div
-            style={{
-              width: "72px",
-              height: "72px",
-              borderRadius: "50%",
-              background: "#f5f5dc",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "36px",
-              margin: "0 auto 18px",
-              boxShadow: "0 12px 24px rgba(37, 212, 235, 0.4)",
-            }}
-          >
-            🎉
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-indigo-950 via-violet-900 to-indigo-900 p-4 pt-16 sm:p-8 sm:pt-24">
+        <div className="relative w-full max-w-md overflow-hidden rounded-3xl bg-white shadow-2xl">
+          <div className="bg-gradient-to-r from-amber-400 to-amber-500 px-8 py-10 text-center">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg">
+              <PartyPopper className="h-8 w-8 text-amber-500" />
+            </div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-950">
+              Application received
+            </p>
           </div>
 
-          <h1 style={{ ...styles.title, marginBottom: "10px" }}>
-            Application <span style={styles.titleAccent}>Submitted!</span>
-          </h1>
+          {/* perforated ticket edge */}
+          <div className="relative">
+            <div className="absolute -left-3 top-0 h-6 w-6 -translate-y-1/2 rounded-full bg-indigo-950" />
+            <div className="absolute -right-3 top-0 h-6 w-6 -translate-y-1/2 rounded-full bg-indigo-950" />
+            <div className="border-t-2 border-dashed border-slate-200" />
+          </div>
 
-          <p style={{ color: "#64748b", fontSize: "14px", lineHeight: 1.6 }}>
-            Thank you, <b>{formData.fullName}</b>! Your application has been
-            received.
-          </p>
+          <div className="px-8 py-8 text-center">
+            <h1 className="text-2xl font-black text-slate-900">
+              You're in the queue, {formData.fullName.split(" ")[0] || "founder"}.
+            </h1>
+            <p className="mt-3 text-sm leading-relaxed text-slate-500">
+              Thanks for applying. We've logged your submission and our team
+              will reach out at{" "}
+              <span className="font-semibold text-indigo-600">{formData.email}</span>{" "}
+              with next steps.
+            </p>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div style={styles.canvas}>
-      <div style={styles.card}>
-        <div style={styles.stepBar}>
-          <div style={styles.stepLineTrack} />
-          <div style={styles.stepLineFill} />
-          {steps.map((label, i) => (
-            <div key={label} style={styles.stepDotWrap}>
-              <div style={styles.stepDot(i + 1)}>{i + 1}</div>
-              <span style={styles.stepDotLabel(i + 1)}>{label}</span>
-            </div>
-          ))}
+    <div className="flex min-h-screen items-center justify-center from-cornsilk-950 p-4 pt-24 sm:p-8 sm:p-32">
+      <div className="w-full max-w-xl rounded-3xl bg-white p-6 shadow-2xl sm:p-10">
+        <p className="mb-1 text-center text-xs font-bold uppercase tracking-[0.25em] text-amber-500">
+          NIGCOMSAT
+        </p>
+        <h1 className="mb-8 text-center text-2xl font-black text-slate-900 sm:text-3xl">
+          Apply for the{" "}
+          <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+            Next Cohort
+          </span>
+        </h1>
+
+        {/* Step tracker */}
+        <div className="relative mb-10 flex justify-between">
+          <div className="absolute left-4 right-4 top-4 h-1 rounded-full bg-slate-100" />
+          <div
+            className="absolute left-4 top-4 h-1 rounded-ful from-cyan-450 transition-all duration-500"
+            style={{ width: `calc(${fillPercent}% - ${fillPercent * 0.08}px)` }}
+          />
+          {steps.map((label, i) => {
+            const stepNum = i + 1;
+            const active = currentStep === stepNum;
+            const done = currentStep > stepNum;
+            return (
+              <div key={label} className="relative z-10 flex flex-col items-center gap-2">
+                <div
+                  className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold transition-all duration-300 ${
+                    done
+                      ? "bg-indigo-600 text-white"
+                      : active
+                      ? "scale-125 bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-lg shadow-indigo-300"
+                      : "bg-slate-100 text-slate-400"
+                  }`}
+                >
+                  {done ? <CheckCircle2 className="h-4 w-4" /> : stepNum}
+                </div>
+                <span
+                  className={`hidden text-[10px] font-bold sm:block ${
+                    currentStep >= stepNum ? "text-indigo-600" : "text-slate-400"
+                  }`}
+                >
+                  {label}
+                </span>
+              </div>
+            );
+          })}
         </div>
 
         <form>
           {currentStep === 1 && (
-            <>
-              <h2 style={styles.title}>
-                <span style={styles.titleAccent}>Details</span>
-              </h2>
-
-
-
-              <div style={styles.fieldGroup}>
-                <label style={styles.label}>Full Name</label>
-
+            <div className="space-y-5">
+              <div>
+                <label htmlFor="fullName" className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-600">
+                  Full name
+                </label>
                 <input
+                  id="fullName"
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleChange}
-                  style={styles.input(errors.fullName)}
+                  placeholder="James Onoja"
+                  className={`${inputBase} ${errors.fullName ? inputErr : inputOk}`}
                 />
-
                 {errors.fullName && (
-                  <span style={styles.errorText}>{errors.fullName}</span>
+                  <p className="mt-1.5 text-xs font-semibold text-rose-600">{errors.fullName}</p>
                 )}
               </div>
 
-              <div style={styles.fieldGroup}>
-                <label style={styles.label}>Email</label>
-
+              <div>
+                <label htmlFor="email" className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-600">
+                  Email
+                </label>
                 <input
+                  id="email"
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  style={styles.input(errors.email)}
+                  placeholder="James@startup.com"
+                  className={`${inputBase} ${errors.email ? inputErr : inputOk}`}
                 />
-
                 {errors.email && (
-                  <span style={styles.errorText}>{errors.email}</span>
+                  <p className="mt-1.5 text-xs font-semibold text-rose-600">{errors.email}</p>
                 )}
               </div>
-
-            </>
+            </div>
           )}
 
           {currentStep === 2 && (
-            <>
-              <h2 style={styles.title}>
-                 <span style={styles.titleAccent}>Qualifications</span>
-              </h2>
-
-
-              <div style={styles.fieldGroup}>
-                <label style={styles.label}>Phone</label>
-
+            <div className="space-y-5">
+              <div>
+                <label htmlFor="phone" className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-600">
+                  Phone
+                </label>
                 <input
+                  id="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  style={styles.input()}
+                  placeholder="080X XXX XXXX"
+                  className={`${inputBase} ${inputOk}`}
                 />
-              </div>              
+              </div>
 
-              <div style={styles.fieldGroup}>
-                <label style={styles.label}>Are you legally registered with the CAC</label>
-
+              <div>
+                <label htmlFor="role" className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-600">
+                  Are you legally registered with the CAC?
+                </label>
                 <select
+                  id="role"
                   name="role"
-                  value={formData.options}
+                  value={formData.role}
                   onChange={handleChange}
-                  style={styles.input()}
+                  className={`${inputBase} ${inputOk} bg-white`}
                 >
                   <option value="Yes">Yes</option>
-                  <option value="NO">No</option>
+                  <option value="No">No</option>
                   <option value="Maybe">Maybe</option>
                 </select>
               </div>
 
-              <div style={styles.fieldGroup}>
-                <label style={styles.label}>Have any working prototype or MVP's</label>
-
+              <div>
+                <label htmlFor="experience" className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-600">
+                  Do you have a working prototype or MVP?
+                </label>
                 <select
+                  id="experience"
                   name="experience"
                   value={formData.experience}
                   onChange={handleChange}
-                  style={styles.input()}
+                  className={`${inputBase} ${inputOk} bg-white`}
                 >
-                  <option value="Yes, We do!">Yes, We do!</option>
-                  <option value="No, we don't">No, at the moment</option>
+                  <option value="Yes, We do!">Yes, we do!</option>
+                  <option value="No, not at the moment">No, not at the moment</option>
                 </select>
               </div>
-            </>
+            </div>
           )}
 
           {currentStep === 3 && (
-            <>
-              <h2 style={styles.title}>
-                <span style={styles.titleAccent}>Attachments</span>
-              </h2>
-
-
-              <div style={styles.fieldGroup}>
-                <label style={styles.label}>What's your teams strongest growth and scalbility</label>
-
+            <div className="space-y-5">
+              <div>
+                <label htmlFor="coverLetter" className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-600">
+                  What's your team's strongest growth and scalability angle?
+                </label>
                 <textarea
+                  id="coverLetter"
                   name="coverLetter"
                   value={formData.coverLetter}
                   onChange={handleChange}
-                  style={styles.textarea}
+                  rows={5}
+                  placeholder="Tell us what makes your traction or plan defensible..."
+                  className={`${inputBase} ${inputOk} resize-y`}
                 />
               </div>
 
-              <div style={styles.fieldGroup}>
-                <label style={styles.label}>Portfolio / GitHub</label>
-
+              <div>
+                <label htmlFor="portfolioUrl" className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-600">
+                  Portfolio / GitHub
+                </label>
                 <input
+                  id="portfolioUrl"
                   type="url"
                   name="portfolioUrl"
                   value={formData.portfolioUrl}
                   onChange={handleChange}
-                  style={styles.input()}
+                  placeholder="https://github.com/yourteam"
+                  className={`${inputBase} ${inputOk}`}
                 />
               </div>
 
-              <div style={styles.fieldGroup}>
-                <label style={styles.label}> 1-minute video</label>
-
-                <input type="file" accept="video/*" onChange={handleFileChange} />
+              <div>
+                <label className="mb-2 block text-xs font-bold uppercase tracking-wide text-slate-600">
+                  1-minute pitch video
+                </label>
+                <label
+                  htmlFor="video"
+                  className={`flex cursor-pointer items-center justify-center gap-2 rounded-xl border-2 border-dashed px-4 py-6 text-sm font-semibold transition ${
+                    errors.video
+                      ? "border-rose-300 text-rose-500"
+                      : "border-slate-200 text-slate-500 hover:border-indigo-400 hover:text-indigo-600"
+                  }`}
+                >
+                  <UploadCloud className="h-5 w-5" />
+                  {formData.videoName ? "Replace video" : "Upload video"}
+                </label>
+                <input id="video" type="file" accept="video/*" onChange={handleFileChange} className="hidden" />
 
                 {formData.videoName && (
-                  <small style={{ color: "#2563eb", fontWeight: "600", marginTop: "6px" }}>
+                  <p className="mt-2 text-xs font-semibold text-indigo-600">
                     Selected: {formData.videoName}
-                  </small>
+                  </p>
                 )}
-
                 {errors.video && (
-                  <span style={styles.errorText}>{errors.text}</span>
+                  <p className="mt-1.5 text-xs font-semibold text-rose-600">{errors.video}</p>
                 )}
               </div>
-            </>
+            </div>
           )}
 
           {currentStep === 4 && (
-            <>
-              <h2 style={styles.title}>
-                <span style={styles.titleAccent}>Review</span>
-              </h2>
-
-
-              <div style={styles.reviewBox}>
-                <div style={styles.reviewItem}>
-                  <span style={styles.reviewLabel}>Name</span>
-                  <span>{formData.fullName}</span>
+            <div className="space-y-3 rounded-2xl border-2 border-indigo-50 bg-indigo-50/60 p-6">
+              {[
+                ["Name", formData.fullName || "-"],
+                ["Email", formData.email || "-"],
+                ["Phone", formData.phone || "-"],
+                ["CAC registered", roleLabels[formData.role]],
+                ["Working MVP", experienceLabels[formData.experience]],
+                ["Portfolio", formData.portfolioUrl || "-"],
+                ["Video", formData.videoName || "-"],
+              ].map(([label, value]) => (
+                <div key={label} className="flex justify-between gap-4 text-sm">
+                  <span className="font-bold text-indigo-600">{label}</span>
+                  <span className="text-right text-slate-700">{value}</span>
                 </div>
-
-                <div style={styles.reviewItem}>
-                  <span style={styles.reviewLabel}>Email</span>
-                  <span>{formData.email}</span>
-                </div>
-
-                <div style={styles.reviewItem}>
-                  <span style={styles.reviewLabel}>Phone</span>
-                  <span>{formData.phone || "-"}</span>
-                </div>
-
-                <div style={styles.reviewItem}>
-                  <span style={styles.reviewLabel}>Role</span>
-                  <span>{roleLabels[formData.role]}</span>
-                </div>
-
-                <div style={styles.reviewItem}>
-                  <span style={styles.reviewLabel}>Experience</span>
-                  <span>{experienceLabels[formData.experience]}</span>
-                </div>
-
-                <div style={styles.reviewItem}>
-                  <span style={styles.reviewLabel}>Portfolio</span>
-                  <span>{formData.portfolioUrl || "-"}</span>
-                </div>
-
-                <div style={{ ...styles.reviewItem, marginBottom: 0 }}>
-                  <span style={styles.reviewLabel}>video</span>
-                  <span>{formData.videoName}</span>
-                </div>
-              </div>
-            </>
+              ))}
+            </div>
           )}
 
-          <div style={styles.btnContainer}>
+          <div className="mt-8 flex gap-3">
             {currentStep > 1 && (
-              <button onClick={prevStep} className="glow-btn" style={styles.backBtn}>
+              <button
+                type="button"
+                onClick={prevStep}
+                className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border-2 border-slate-200 py-3 text-sm font-bold text-slate-600 transition hover:border-slate-300 hover:bg-slate-50"
+              >
+                <ArrowLeft className="h-4 w-4" />
                 Back
               </button>
             )}
 
-            {currentStep < 4 ? (
-              <button onClick={nextStep} className="glow-btn"style={styles.nextBtn}>
+            {currentStep < steps.length ? (
+              <button
+                type="button"
+                onClick={nextStep}
+                className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 py-3 text-sm font-bold text-white shadow-lg shadow-indigo-200 transition hover:brightness-110"
+              >
                 Next
+                <ArrowRight className="h-4 w-4" />
               </button>
             ) : (
-              <button onClick={handleSubmit} className="glow-btn" style={styles.submitBtn}>
+              <button
+                type="button"
+                onClick={handleSubmit}
+                className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 py-3 text-sm font-bold text-amber-950 shadow-lg shadow-amber-200 transition hover:brightness-105"
+              >
                 Submit Application
               </button>
             )}
