@@ -5,6 +5,7 @@ import Launchpad from '../components/Launchpad'
 import StepsTimeline from '../components/StepsTimeline'
 import SwiperCarousel from '../components/SwiperCarousel'
 import Alumini from '../components/Alumini'
+import StepsTimeline2 from '../components/StepsTimeline2.0'
 
 
 const Home = () => {
@@ -12,7 +13,8 @@ const Home = () => {
     <>
       <NavBar />
       <SwiperCarousel/>
-      <StepsTimeline />
+      {/* <StepsTimeline /> */}
+      <StepsTimeline2 />
       <Launchpad />
       <Alumini />
     </>

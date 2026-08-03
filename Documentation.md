@@ -25,7 +25,7 @@ Progress report (To be explained by each team member in detail daily...just like
 
     Day 1
         Progress report
-        Joseph -
+        Joseph - 
         Destiny -
         Mofe -
         Mohammed -
