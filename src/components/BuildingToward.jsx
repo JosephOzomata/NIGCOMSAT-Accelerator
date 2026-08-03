@@ -37,7 +37,7 @@ export default function BuildingToward() {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-[#F7F3EB] flex flex-col items-center justify-center p-6 md:p-12">
+    <div className="w-full min-h-screen bg-white flex flex-col items-center justify-center p-6 md:p-12">
 
         <div className="text-center mb-10 max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-black text-slate-800 tracking-tight">

@@ -25,7 +25,7 @@ export default function CompetitionFormat() {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-[#F7F3EB] flex flex-col items-center justify-center p-6 md:p-12 box-border">
+    <div className="w-full min-h-screen bg-white flex flex-col items-center justify-center p-6 md:p-12 box-border">
       
       <div className="text-center mb-16 max-w-2xl px-4">
         <h1 className="text-4xl font-black text-slate-800 tracking-tight mb-4">
@@ -40,13 +40,13 @@ export default function CompetitionFormat() {
         {items.map((item) => (
           <div
             key={item.id}
-            className="bg-white p-8 rounded-2xl shadow-md flex flex-col gap-3 min-h-[180px] transition-all duration-300 hover:shadow-xl hover:scale-[1.01]"
+            className="bg-black p-8 rounded-2xl shadow-md flex flex-col gap-3 min-h-[180px] transition-all duration-300 hover:shadow-xl hover:scale-[1.01]"
           >
-            <h3 className="text-xl font-extrabold text-slate-800 tracking-tight">
+            <h3 className="text-xl font-extrabold text-white tracking-tight">
               {item.subHeader}
             </h3>
             
-            <p className="text-sm font-medium text-slate-600 leading-relaxed">
+            <p className="text-sm font-medium text-white leading-relaxed">
               {item.text}
             </p>
           </div>

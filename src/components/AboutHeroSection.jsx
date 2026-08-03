@@ -2,17 +2,17 @@ import aboutImage from "../images/about.png";
 
 function AboutHeroSection() {
     return (
-        <section className="bg-[#F7F3EB] min-h-screen pt-30 flex items-center">
+        <section className="bg-white- min-h-screen pt-30 flex items-center">
             <div className="max-w-7xl mx-auto w-[90%]">
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <div>
                         <div className="inline-block bg-white rounded-full shadow-sm mb-5">
-                            <p className="text-[#2166D1] p-1 font-medium tracking-wide">
+                            <p className="text-[#2166D1] text-gray-500 p-1 font-medium tracking-wide">
                                 About the NIGCOMSAT Accelerator
                             </p>
                         </div>
 
-                        <h1 className="text-[72px] leading-[80px] font-bold text-[#2166D1] mb-8">
+                        <h1 className="text-[72px] text-black leading-[80px] font-bold text-[#2166D1] mb-8">
                             Building Nigeria's
                             <br />
                             Next Generation

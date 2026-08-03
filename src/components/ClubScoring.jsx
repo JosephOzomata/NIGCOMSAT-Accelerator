@@ -27,7 +27,7 @@ export default function LeaderboardDashboard() {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-[#F7F3EB] flex flex-col items-center justify-center p-6 md:p-12 box-border">
+    <div className="w-full min-h-screen bg-white flex flex-col items-center justify-center p-6 md:p-12 box-border">
       
       <header className="text-center mb-12">
         <h1 className="text-4xl font-black text-slate-800 mb-2">How Clubs were Scored</h1>

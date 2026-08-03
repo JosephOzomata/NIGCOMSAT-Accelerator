@@ -13,8 +13,8 @@ export default function Spotlight() {
     <div
     style={{
       minHeight: '100vh',
-      backgroundColor:'#f5f5dc',
-      color:'#fff8dc',
+      backgroundColor:'white',
+      color:'white',
       display:'flex',
     }}
     >      
@@ -22,7 +22,7 @@ export default function Spotlight() {
       <div style={{ width: '50%', padding: '6rem 4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', zIndex: 10 }}>
         <div style={{ maxWidth: '480px', margin: '0 auto' }}>
           
-          <span style={{ fontSize: '2.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#4f46e5', display: 'block', marginBottom: '0.75rem' }}>
+          <span style={{ fontSize: '2.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'black', display: 'block', marginBottom: '0.75rem' }}>
             {content.tagline}
           </span>
 
