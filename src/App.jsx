@@ -13,6 +13,8 @@ import Apply from './pages/Apply'
 import Upload from './pages/Upload'
 import Gallery from './pages/Gallery'
 import ScrollToTop from './components/ScrollToTop'
+import Hackathon from './pages/Hackathon'
+import Events from './pages/Events'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +31,8 @@ function App() {
           <Route path="/apply" element={<Apply />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/hackathon" element={<Hackathon />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
         <Footer />
       </Router>

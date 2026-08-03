@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Launchpad() {
   return (
-    <section className="bg-gray-200 py-24 px-8">
+    <section className="bg-gray-200 py-24 mx-3">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 sm:grid-cols-1 gap-10">
         <div className="w-full">
           <img
