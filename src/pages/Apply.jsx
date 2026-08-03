@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+import React from 'react'
+import Programs from '../components/Programs'
+import EligibilityChecklist from '../components/EligibilityChecklist'
+
+const Apply = () => {
+  return (
+    <>
+        <Programs />
+        <EligibilityChecklist />
+    </>
+  )
+}
+
+export default Apply
+=======
 import React, { useState } from "react";
 import {
   ArrowLeft,
@@ -411,3 +427,4 @@ export default function MultiStepApplyPage() {
     </div>
   );
 }
+>>>>>>> a80a70405789da037bd118dbd04e8bea79933456

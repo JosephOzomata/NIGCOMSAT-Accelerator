@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ArrowDown, ArrowUp, ChevronDown, ChevronUp, X } from "lucide-react";
 import livelogo from "../images/livelogo.webm";
+import { Link } from "react-router-dom";
+import Apply from "../pages/Apply";
 import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
@@ -51,6 +53,11 @@ const NavBar = () => {
           <div className="max-w-7xl mx-auto bg-white/80 backdrop-blur-lg rounded-2xl border border-[#e5e5e5] shadow-sm">
             <div className="px-6 py-4">
               <div className="grid grid-cols-3 items-center">
+                {/* Pages */}
+                <div className="hidden lg:flex justify-evenly items-center gap-1">        
+                  <Link to="/spacefest">
+                  
+                  </Link>
                 {/* Left Links - Desktop */}
                 <div className="hidden lg:flex justify-evenly items-center gap-1">
                   <div className="relative" ref={dropdownRef}>
@@ -66,7 +73,55 @@ const NavBar = () => {
                         <ChevronDown size={18} />
                       )}
                     </button>
-
+                  </Link>
+                  <Link to="/about">
+                    <button
+                      className="relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all text-[#8a8a8a] hover:text-[#3a3a3a] hover:bg-[#f5f5f5]"
+                      tabindex="0"
+                    >
+                      About
+                    </button>
+                  </Link>
+                  <Link to="/apply">
+                    <button
+                      className="relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all text-[#8a8a8a] hover:text-[#3a3a3a] hover:bg-[#f5f5f5]"
+                      tabindex="0"
+                    >
+                      Apply
+                    </button>
+                  </Link>
+                </div>
+                {/* Logo */}
+                <Link to="/">
+                
+                <div className="flex  justify-center items-center gap-3">
+                  {/* {logo} */}
+                  
+                    {/* <img src={logo} alt="" className="w-25 animate-pulse shadow-lg h-25 absolute overflow-hidden rounded-full bg-white" /> */}
+                  <video src={livelogo} autoPlay loop muted className="w-25 h-25 absolute overflow-hidden rounded-full bg-white" />
+                </div>
+                </Link>
+                {/* Extras */}
+                <div className="hidden lg:flex justify-evenly items-center gap-1">
+                  <button
+                    className="relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all text-[#1a1a1a] font-medium"
+                    tabindex="0"
+                  >
+                    Events
+                    <div className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#1a1a1a] rounded-full"></div>
+                  </button>
+                  <button
+                    className="relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all text-[#8a8a8a] hover:text-[#3a3a3a] hover:bg-[#f5f5f5]"
+                    tabindex="0"
+                  >
+                    Accelerator
+                  </button>
+                  <button
+                    className="relative px-4 py-2 rounded-xl text-sm tracking-wide transition-all text-[#8a8a8a] hover:text-[#3a3a3a] hover:bg-[#f5f5f5]"
+                    tabindex="0"
+                  >
+                    Gallery
+                  </button>
                     {showDropdown && (
                       <div className="absolute top-14 left-0 w-40 bg-white rounded-2xl shadow-lg  overflow-hidden z-50">
                         <div className="grid">
