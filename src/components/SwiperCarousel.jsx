@@ -1,32 +1,32 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/navigation";
+
 import "swiper/css/pagination";
 
 const slides = [
   {
     type: "video",
-    src: "/videos/GRIDMAN(DUB)1.mp4",
-    title: "Episode 1",
-    description: "Introduction to the first episode of Gridman.",
+    src: "https://res.cloudinary.com/dul0ip9bh/video/upload/ilvkh1wobdj6tbh0g7kq.mp4",
+    title: "Nigcomsat Accelerator",
+    description: "",
   },
   {
     type: "video",
-    src: "/videos/GRIDMAN(DUB)2.mp4",
+    src: "https://res.cloudinary.com/dul0ip9bh/video/upload/zbuj7n2an9lygxyovcjz.mp4",
     title: "Episode 2",
     description: "Understanding what Gridman is about.",
   },
   {
     type: "video",
-    src: "/videos/GRIDMAN(DUB)4.mp4",
+    src: "/videos/VID-20260720-WA0028.mp4",
     title: "Episode 4",
     description: "Alias on who the real culprit is.",
   },
   {
     type: "video",
-    src: "/videos/GRIDMAN(DUB)6.mp4",
+    src: "/videos/VID-20260720-WA0029.mp4",
     title: "Episode 6",
     description: "Our classmate is the antagonist of our world.",
   },
@@ -35,12 +35,12 @@ const slides = [
 export default function SwiperCarousel() {
   return (
     <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
-      navigation
+      modules={[ Pagination, Autoplay]}
+      
       pagination={{ clickable: true }}
       autoplay={{
-        delay: 6000,
-        disableOnInteraction: false,
+        delay: 11000,
+        disableOnInteraction: true,
       }}
       speed={1800}
       loop
@@ -61,7 +61,7 @@ export default function SwiperCarousel() {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
 
-            <div className="absolute left-6 md:left-16 bottom-16 md:bottom-24 text-white z-10">
+            {/* <div className="absolute left-6 md:left-16 bottom-16 md:bottom-24 text-white z-10">
               <h1 className="text-4xl md:text-7xl font-extrabold">
                 {slide.title}
               </h1>
@@ -69,7 +69,7 @@ export default function SwiperCarousel() {
               <p className="mt-4 max-w-2xl text-lg md:text-2xl">
                 {slide.description}
               </p>
-            </div>
+            </div> */}
           </div>
         </SwiperSlide>
       ))}

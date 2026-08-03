@@ -14,6 +14,7 @@ const Spacefest = () => {
       <CompetitionFormat />
       <ClubScoring />
       <SpotLightPage />
+
     </>
   )
 }

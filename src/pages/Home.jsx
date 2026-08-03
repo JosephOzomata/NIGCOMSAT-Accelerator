@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import Launchpad from '../components/Launchpad'
 import StepsTimeline from '../components/StepsTimeline'
 import SwiperCarousel from '../components/SwiperCarousel'
+import StepsTimeline2 from '../components/StepsTimeline2.0'
 
 
 const Home = () => {
@@ -11,7 +12,8 @@ const Home = () => {
     <>
       <NavBar />
       <SwiperCarousel/>
-      <StepsTimeline />
+      {/* <StepsTimeline /> */}
+      <StepsTimeline2 />
       <Launchpad />
     </>
   )
