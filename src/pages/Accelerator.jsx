@@ -1,5 +1,6 @@
 // src/pages/AcceleratorPage.jsx
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Rocket,
@@ -20,7 +21,7 @@ import {
   Wifi,
   Mic,
   Video,
-  Link,
+//   Link,
   Download,
   Sparkles,
   Flame,
@@ -52,57 +53,52 @@ const Accelerator = () => {
   const [activeTab, setActiveTab] = useState('overview');
 
   const programs = [
-    {
-      id: 1,
-      title: "Space Tech Accelerator",
-      tagline: "Launch your space technology startup",
-      description: "A 12-week intensive program designed to help early-stage space tech startups develop their products, validate their market, and prepare for investment.",
-      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=500&fit=crop",
-      duration: "12 Weeks",
-      cohort: "Cohort 4",
-      status: "Applications Open",
-      deadline: "September 30, 2026",
-      benefits: [
-        "₦15M seed funding",
-        "Mentorship from industry experts",
-        "Office space in Abuja",
-        "Access to satellite data",
-        "Networking with investors",
-        "Global market access"
-      ],
-      focus: ["Space Tech", "Satellite Data", "IoT", "AI"],
-      mentors: [
-        { name: "Dr. Sarah Johnson", role: "Space Tech Expert", company: "NASA" },
-        { name: "Prof. Michael Okafor", role: "AI Research Lead", company: "MIT" },
-        { name: "Adaobi Nwachukwu", role: "Product Manager", company: "Google" }
-      ]
-    },
-    {
-      id: 2,
-      title: "Satellite Data Innovation Lab",
-      tagline: "Transform data into impact",
-      description: "A 6-month program focused on building data-driven solutions using satellite imagery and Earth observation data for agriculture, climate, and urban development.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop",
-      duration: "6 Months",
-      cohort: "Cohort 2",
-      status: "Coming Soon",
-      deadline: "October 15, 2026",
-      benefits: [
-        "₦10M grant funding",
-        "Data science mentorship",
-        "Cloud computing credits",
-        "Access to satellite archives",
-        "Collaboration opportunities",
-        "Publication support"
-      ],
-      focus: ["Data Science", "Satellite Imagery", "Climate Tech", "Agriculture"],
-      mentors: [
-        { name: "Dr. Maria Santos", role: "Data Science Lead", company: "Microsoft" },
-        { name: "David Chen", role: "Satellite Communications", company: "SpaceX" },
-        { name: "Eng. Chidi Okonkwo", role: "IoT Specialist", company: "AWS" }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "NigComSat Accelerator Program",
+    tagline: "Your launchpad for space-tech innovation",
+    description: "A strategic initiative designed to support dynamic early-stage startups and innovators developing space-based solutions to address critical challenges in Nigeria and beyond. The program provides expert mentorship, capacity-building workshops, and visibility to investors [citation:1].",
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=500&fit=crop",
+    duration: "6 months (launched March 31 2026)",
+    cohort: "Cohort 3.0",
+    // status: "Applications Closed (Cohort 3.0 Launched)",
+    deadline: "November 6, 2026 [Demo Day]",
+    benefits: [
+      "Expert mentorship from industry leaders",
+      "Capacity-building and product refinement workshops",
+      "Visibility, media exposure, and pitch opportunities",
+      "Investment readiness training",
+      "Live pitch practice and Demo Day",
+      "Networking with investors and ecosystem players [citation:1]"
+    ],
+    focus: ["Agriculture", "Health", "Telecommunications", "Artificial Intelligence (AI)", "Climate Change", "Satellite & Space-related", "Security", "Logistics", "Robotics"],
+    mentors: [
+      // Mentors are selected based on expertise for each cohort [citation:1]
+    ]
+  },
+  {
+    id: 2,
+    title: "NigComSat Space-Tech Hackathon",
+    tagline: "Build innovative solutions with satellite technology",
+    description: "A five-day intensive program where participants identify challenges, create ideas, build prototypes, and receive mentorship using satellite technologies. The winning team advances to the NigComSat Accelerator Programme to further refine and implement their project [citation:2].",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop",
+    duration: "5 Days Begins on August 6, 2026",
+    cohort: "Regional Series (North-East, North-West)",
+    // status: "Completed (North-East & North-West)",
+    deadline: "August 13, 2026 [Closing Event]",
+    benefits: [
+      "Hands-on training in satellite technology",
+      "Mentorship from space-tech experts",
+      "Opportunity to build prototypes",
+      "Chance to join the NigComSat Accelerator Program",
+      "Networking with innovators and professionals [citation:2][citation:7]"
+    ],
+    focus: ["VSAT Technology", "Satellite Communications", "IoT", "Community Solutions", "Youth Empowerment"],
+    mentors: [
+      // Mentors and panelists from each regional event [citation:4]
+    ]
+  }
+];
 
   const stats = [
     { icon: Rocket, value: "25+", label: "Startups Accelerated" },
@@ -166,7 +162,7 @@ const Accelerator = () => {
       {/* Hero Section */}
       <section className="relative bg-black text-white overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          className="absolute  h-screen inset-0 bg-cover bg-center bg-no-repeat opacity-30"
           style={{
             backgroundImage: 'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop")'
           }}
@@ -178,13 +174,8 @@ const Accelerator = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm text-sm font-medium rounded-full border border-white/30">
-                🚀 Accelerator Program
-              </span>
-              <span className="text-white/60 text-sm">Launch your space tech startup</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 leading-[1.1]">
+            
+            <h1 className="text-4xl md:text-6xl pt-12 lg:text-7xl font-bold tracking-tight mb-4 leading-[1.1]">
               NigComSat<br />
               <span className="text-white/80">Accelerator</span>
             </h1>
@@ -192,19 +183,17 @@ const Accelerator = () => {
               Empowering the next generation of space technology entrepreneurs with funding, mentorship, and global opportunities.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-3.5 bg-white text-black rounded-lg hover:bg-gray-100 transition flex items-center gap-2 font-medium">
+              <Link to="/apply" className="px-8 py-3.5 bg-white text-black rounded-lg hover:bg-gray-100 transition flex items-center gap-2 font-medium">
                 Apply Now <ArrowRight className="w-4 h-4" />
-              </button>
-              <button className="px-8 py-3.5 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg hover:bg-white/30 transition flex items-center gap-2 font-medium">
-                Learn More <ChevronRight className="w-4 h-4" />
-              </button>
+              </Link>
+              
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -219,12 +208,12 @@ const Accelerator = () => {
             </div>
           ))}
         </motion.div>
-      </section>
+      </section> */}
 
       {/* Navigation Tabs */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
         <div className="flex flex-wrap gap-2 border-b border-gray-200">
-          {['overview', 'programs', 'apply', 'faq'].map(tab => (
+          {['overview', 'programs', 'faq'].map(tab => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -400,7 +389,7 @@ const Accelerator = () => {
           </div>
         )}
 
-        {activeTab === 'apply' && (
+        {/* {activeTab === 'apply' && (
           <div className="max-w-2xl mx-auto">
             <div className="bg-white border border-gray-200 rounded-2xl p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Apply to the Accelerator</h2>
@@ -450,7 +439,7 @@ const Accelerator = () => {
               </form>
             </div>
           </div>
-        )}
+        )} */}
 
         {activeTab === 'faq' && (
           <div className="max-w-3xl mx-auto">
@@ -480,12 +469,9 @@ const Accelerator = () => {
             Join the NigComSat Accelerator and get the support you need to scale your space technology venture.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-8 py-3.5 bg-white text-black rounded-lg hover:bg-gray-100 transition font-medium">
+            <Link to="/apply" className="px-8 py-3.5 bg-white text-black rounded-lg hover:bg-gray-100 transition font-medium">
               Apply Now
-            </button>
-            <button className="px-8 py-3.5 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg hover:bg-white/30 transition font-medium">
-              Download Brochure
-            </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -231,7 +231,7 @@ const NavBar = () => {
                             Spacefest
                           </NavLink>
                           <p className="hover:bg-gray-100 cursor-pointer p-3">
-                            HackFest
+                            SpaceHacks
                           </p>
                           <p className="hover:bg-gray-100 cursor-pointer p-3">
                             More
