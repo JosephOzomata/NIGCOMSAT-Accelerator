@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Launchpad() {
   return (
-    <section className="bg-gray-200 py-24 mx-3">
+    <section className="bg-white py-24 mx-3">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 sm:grid-cols-1 gap-10">
         <div className="w-full">
           <img
@@ -16,11 +16,11 @@ function Launchpad() {
         </div>
 
         <div className="w-full">
-          <p className="uppercase text-[#2166D1] tracking-widest font-semibold mb-3">
+          <p className="uppercase text-black tracking-widest font-semibold mb-3">
             NIGCOMSAT Accelerator
           </p>
 
-          <h2 className="text-[60px] font-bold leading-tight text-[#2166D1] mb-6">
+          <h2 className="text-[60px] font-bold leading-tight text-black mb-6">
             Build.
             <br />
             Launch.
@@ -34,7 +34,7 @@ function Launchpad() {
             needed to transform bold ideas into lasting impact.
           </p>
 
-          <Link to="/apply" className="bg-[#2166D1] text-white px-8 py-4 rounded-full hover:bg-blue-800 transition duration-300">
+          <Link to="/apply" className="bg-black text-white px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300">
             Join the Accelerator
           </Link>
 
