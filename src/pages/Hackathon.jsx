@@ -451,7 +451,7 @@ const Hackathon = () => {
                     </div>
                   </div>
 
-                  <div className="flex gap-3 pt-4 border-t border-gray-200">
+                  <div className="flex gap-3  pt-4 border-t border-gray-200">
                     <button className="flex-1 bg-black text-white py-2.5 rounded-lg hover:bg-gray-800 transition font-medium">
                       Register Now
                     </button>

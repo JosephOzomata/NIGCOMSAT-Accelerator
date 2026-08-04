@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
       <NavBar />
-      <SwiperCarousel/>
+      <SwiperCarousel className="w-full h-screen" />
       {/* <StepsTimeline /> */}
       <StepsTimeline2 />
       <Launchpad />

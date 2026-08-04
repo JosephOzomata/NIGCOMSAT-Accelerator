@@ -15,6 +15,8 @@ import Upload from './pages/Upload'
 import Gallery from './pages/Gallery'
 import Hackathon from './pages/Hackathon'
 import Events from './pages/Events'
+import Accelerator from './pages/Accelerator'
+import Portfolio from './pages/Portfolio'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -33,6 +35,8 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/hackathon" element={<Hackathon />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/accelerator" element={<Accelerator />} />
+          <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
         <Footer />
       </Router>
