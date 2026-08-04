@@ -1,8 +1,9 @@
 import React from 'react';
-import magnifying from '../images/magnifying.jpg';
+import { motion } from 'framer-motion';
+import magnifying from '../images/magnifying.png';
 import equip from '../images/equip.png';
 import link from '../images/link.jpg';
-import support from '../images/support.png';
+import support from '../images/support.jpg';
 
 export default function BuildingToward() {
   const cards = [
@@ -10,66 +11,94 @@ export default function BuildingToward() {
       id: 1,
       title: "Identify and Support",
       desc: "Identify and support nascent actors in the Nigerian space ecosystem.",
-      bgColor: "bg-amber-50/60",
       iconUrl: magnifying
     },
     {
       id: 2,
-      title: "Equip adjacent-industry Startups",
+      title: "Equip Startups",
       desc: "Equip adjacent-industry startups with tools to build on space infrastructure.",
-      bgColor: "bg-slate-100/70",
       iconUrl: equip
     },
     {
       id: 3,
       title: "Connect Founders",
       desc: "Connect founders to world-class mentorship and funding networks.",
-      bgColor: "bg-sky-50/80", 
       iconUrl: link
     },
     {
       id: 4,
       title: "Support FMC's target",
-      desc: "Contribute to the Federal Ministry of Communications' target: 100% increase in tech-enabled startups with procurement access.",
-      bgColor: "bg-emerald-50/50", 
+      desc: "Contribute to the FMC's target: 100% increase in tech-enabled startups.",
       iconUrl: support
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 40 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.6, 
+        ease: [0.215, 0.610, 0.355, 1.000]
+      }
+    }
+  };
+
   return (
-    <div className="w-full min-h-screen bg-white flex flex-col items-center justify-center p-6 md:p-12">
+    <div className="w-full min-h-screen bg-[#F8FAFC] flex flex-col items-center justify-center p-6 md:p-12 overflow-x-hidden">
 
-        <div className="text-center mb-10 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-black text-slate-800 tracking-tight">
-                What we're building toward
-            </h2>
-        </div>
+      <div className="text-center mb-12 max-w-3xl">
+        <h2 className="text-3xl md:text-4xl font-black text-slate-800 tracking-tight">
+          What we're building toward
+        </h2>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl w-full">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.15 }}
+        className="flex lg:grid lg:grid-cols-4 gap-4 w-full max-w-6xl overflow-x-auto lg:overflow-x-visible pb-6 lg:pb-0 snap-x snap-mandatory scrollbar-none"
+      >
         {cards.map((card) => (
-          <div
+          <motion.div
             key={card.id}
-            className={`relative rounded-xl p-8 min-h-[180px] flex flex-col justify-start transition-all duration-300 hover:shadow-md ${card.bgColor}`}
+            variants={cardVariants}
+            className="min-w-[260px] flex-1 lg:min-w-0 snap-center rounded-2xl p-6 min-h-[220px] flex flex-col items-center text-center justify-start border border-slate-200/60 shadow-sm bg-white transition-all duration-300 hover:shadow-md"
           >
-            <div className="max-w-[80%] z-10 flex flex-col gap-2">
-              <h3 className="text-xl font-bold text-slate-800 tracking-tight">
-                {card.title}
-              </h3>
-              <p className="text-sm font-medium text-slate-600 leading-relaxed">
-                {card.desc}
-              </p>
-            </div>
-
-            <div className="absolute bottom-4 right-4 w-16 h-16 pointer-events-none opacity-15 select-none z-0">
+            <div className="w-10 h-10 mb-4 flex items-center justify-center select-none">
               <img 
                 src={card.iconUrl} 
                 alt="" 
-                className="w-full h-full object-contain grayscale"
+                className="w-full h-full object-contain opacity-80"
               />
             </div>
-          </div>
+
+            <div className="flex flex-col gap-2">
+              <h3 className="text-lg font-bold text-slate-800 tracking-tight leading-snug">
+                {card.title}
+              </h3>
+              <p className="text-xs sm:text-sm font-medium text-slate-500 leading-relaxed max-w-[220px] mx-auto">
+                {card.desc}
+              </p>
+            </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
     </div>
   );
