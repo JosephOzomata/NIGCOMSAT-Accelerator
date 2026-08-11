@@ -34,27 +34,36 @@ const Events = () => {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
   const featuredEvent = {
-    title: "NigComSat Space Tech Summit 2026",
-    description: "The premier gathering of space technology leaders, innovators, and policymakers shaping Africa's satellite future.",
-    date: "September 15-17, 2026",
+    title: "NigComSat Hackathon",
+    description: "Join us for an intensive five-day event where you'll collaborate with peers, receive mentorship, and build innovative solutions using satellite technology.",
+    date: "August 6-13, 2026",
     location: "Abuja, Nigeria",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
-    category: "Conference",
-    attendees: 1200
+    category: "Hackathon",
+    // attendees: 1200
   };
 
   const upcomingEvents = [
     {
       id: 1,
-      title: "Satellite IoT Hackathon",
-      date: "October 5-7, 2026",
-      location: "Lagos, Nigeria",
+      title: "Hackathon",
+      date: "August 6, 2026",
+      location: "Online",
       image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop",
       category: "Hackathon",
-      description: "Build innovative IoT solutions using satellite connectivity."
+      description: "Hackathon build period commences"
     },
     {
       id: 2,
+      title: "Hackathon",
+      date: "August 13, 2026",
+      location: "Online",
+      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop",
+      category: "Hackathon",
+      description: "Closing event for the Hackathon"
+    },
+    {
+      id: 3,
       title: "Youth in Space Workshop",
       date: "November 10, 2026",
       location: "Virtual",
@@ -331,7 +340,7 @@ const Events = () => {
                                   {event.location}
                                 </span>
                                 <span className="text-xs px-2 py-0.5 bg-white rounded-full">
-                                  {event.category}
+                                  {event.description}
                                 </span>
                               </div>
                             </div>
@@ -368,9 +377,6 @@ const Events = () => {
               alt={featuredEvent.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute top-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-xs backdrop-blur-sm">
-              Featured
-            </div>
           </div>
           <div className="p-6 md:p-8 flex flex-col justify-center">
             <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
@@ -382,12 +388,7 @@ const Events = () => {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-3">{featuredEvent.title}</h3>
             <p className="text-gray-600 mb-4">{featuredEvent.description}</p>
-            <div className="flex items-center gap-4 text-sm">
-              <span className="px-3 py-1 bg-gray-200 text-gray-700 rounded-full">{featuredEvent.category}</span>
-              <span className="flex items-center gap-1 text-gray-500">
-                <Users className="w-4 h-4" /> {featuredEvent.attendees}+ attending
-              </span>
-            </div>
+            
             <button className="mt-6 px-6 py-2.5 bg-black text-white rounded-lg hover:bg-gray-800 transition self-start flex items-center gap-2">
               Register Now <ArrowRight className="w-4 h-4" />
             </button>
@@ -428,6 +429,9 @@ const Events = () => {
                 <h3 className="font-semibold text-gray-900 mb-1 group-hover:text-gray-700 transition">
                   {event.title}
                 </h3>
+                <p className="text-gray-600 text-sm mb-1">
+                  {event.description}
+                </p>
               </div>
             </motion.div>
           ))}

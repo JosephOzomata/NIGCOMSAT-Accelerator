@@ -163,7 +163,7 @@ const NavBar = () => {
                             : "text-[#8a8a8a] hover:text-[#3a3a3a] hover:bg-[#f5f5f5]"
                         }`}
                       >
-                        accelerator
+                        Accelerator
 
                         {isActive && (
                           <div className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#1a1a1a] rounded-full"></div>
@@ -231,7 +231,7 @@ const NavBar = () => {
                             Spacefest
                           </NavLink>
                           <p className="hover:bg-gray-100 cursor-pointer p-3">
-                            HackFest
+                            SpaceHacks
                           </p>
                           <p className="hover:bg-gray-100 cursor-pointer p-3">
                             More
