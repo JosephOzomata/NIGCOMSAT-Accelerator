@@ -2,44 +2,37 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Code2,
-  Trophy,
   Calendar,
   MapPin,
   Users,
-  Rocket,
+  Trophy,
   ArrowRight,
   CheckCircle2,
+  ChevronRight,
+  Clock,
   Target,
+  Lightbulb,
   Cpu,
+  Rocket,
+  Sparkles,
   Award,
   Globe,
   UserPlus,
   Star,
-  ChevronRight,
-  Clock,
-  Filter,
-  Grid3x3,
-  List,
   Heart,
   Share2,
+  Filter,
+  Search,
+  Grid3x3,
+  List,
+  X,
   ExternalLink,
-  Timer,
   Layers,
-  Play,
   BookOpen,
-  Wifi,
-  Mic,
-  Video,
-  Link,
-  Download,
-  CalendarDays,
-  Sparkles,
+  Zap,
   Flame,
   Medal,
-  Crown,
-  X,
-  Search
+  Crown
 } from 'lucide-react';
 
 const Hackathon = () => {
@@ -48,74 +41,68 @@ const Hackathon = () => {
   const [selectedHackathon, setSelectedHackathon] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
+  // Hackathon data based on research
   const hackathons = [
     {
       id: 1,
-      title: "Space App Challenge",
-      tagline: "Build the future of satellite applications",
-      description: "Develop innovative applications using satellite data for agriculture, climate, and disaster management.",
-      prize: "₦10,000,000",
-      date: "Oct 15-18, 2026",
-      location: "Abuja & Online",
+      title: "NIGCOMSAT Accelerator 3.0 × FreePass Cohort Hackathon",
+      tagline: "Building Satellite-Enabled Early Warning & Alert Services",
+      description: "Develop innovative solutions using satellite technology to address climate resilience, food security, disaster preparedness, and public health challenges across Nigeria and Africa.",
+      longDescription: "This hackathon challenges participants to build satellite-enabled early warning and alert services for environmental, agricultural, and health intelligence. Teams will work with real satellite data, build prototypes, and present their solutions to a panel of industry experts. The winning teams will advance to the NigComSat Accelerator Programme for further mentorship and resources.",
+      prize: "Accelerator Program Entry + Mentorship",
+      date: "August 2026",
+      location: "Nigeria (Hybrid)",
       status: "Open",
       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop",
-      tracks: ["Agriculture", "Climate", "Disaster", "Urban"],
-      participants: 45,
+      tracks: [
+        "Climate Resilience",
+        "Early Warning Systems",
+        "Agricultural Intelligence",
+        "Health Intelligence",
+        "Disaster Preparedness"
+      ],
+      participants: 50,
       maxParticipants: 100,
-      timeline: "3 Days",
-      skills: ["JavaScript", "Python", "React", "Data Science"],
-      prizes: ["₦5M", "₦3M", "₦2M"]
-    },
+      timeline: "5 Days",
+      skills: ["Satellite Data", "Python", "JavaScript", "React", "Data Science", "GIS"],
+      prizes: ["Accelerator Entry", "Mentorship", "Funding Access"],
+      theme: "Climate Resilience Intelligence",
+      mentors: [
+        "Industry Experts from Space Sector",
+        "Technical Mentors",
+        "Business Development Advisors"
+      ]
+    }
+  ];
+
+  // Add past hackathons for context
+  const pastHackathons = [
     {
       id: 2,
-      title: "Satellite IoT Buildathon",
-      tagline: "Connect the unconnected with satellite IoT",
-      description: "Build hardware prototypes that connect IoT devices via satellite networks for remote monitoring.",
-      prize: "₦5,000,000",
-      date: "Nov 5-7, 2026",
-      location: "Lagos, Nigeria",
-      status: "Coming Soon",
-      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=500&fit=crop",
-      tracks: ["Remote Sensing", "Asset Tracking", "Environment", "Agriculture"],
-      participants: 30,
-      maxParticipants: 80,
-      timeline: "3 Days",
-      skills: ["Arduino", "LoRa", "Python", "Cloud"],
-      prizes: ["₦2.5M", "₦1.5M", "₦1M"]
+      title: "North-East Regional Space-Tech Hackathon",
+      location: "Yola, Adamawa State",
+      date: "February 24-28, 2025",
+      theme: "Building Grassroots Innovation in Satellite Technology",
+      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop",
+      participants: 100
     },
     {
       id: 3,
-      title: "Space Policy Hack",
-      tagline: "Design the future of space governance",
-      description: "Create policy frameworks and business models for Africa's space sector development.",
-      prize: "₦7,500,000",
-      date: "Dec 1-3, 2026",
-      location: "Virtual",
-      status: "Apply Now",
-      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop",
-      tracks: ["Regulations", "Business", "Collaboration", "Capacity"],
-      participants: 20,
-      maxParticipants: 50,
-      timeline: "3 Days",
-      skills: ["Policy", "Writing", "Research", "Analysis"],
-      prizes: ["₦3.5M", "₦2M", "₦1M"]
+      title: "North-West Regional Hackathon & VSAT Training",
+      location: "Dutse, Jigawa State",
+      date: "April 7-11, 2025",
+      theme: "Empowering Youth with Satellite Technology",
+      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop",
+      participants: 80
     },
     {
       id: 4,
-      title: "Space Data Visualization",
-      tagline: "Make satellite data beautiful and accessible",
-      description: "Create stunning visualizations that make satellite data accessible to policymakers and the public.",
-      prize: "₦4,000,000",
-      date: "Jan 10-12, 2027",
-      location: "Abuja, Nigeria",
-      status: "Coming Soon",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=500&fit=crop",
-      tracks: ["Data Viz", "UI/UX", "Storytelling", "Education"],
-      participants: 25,
-      maxParticipants: 60,
-      timeline: "3 Days",
-      skills: ["D3.js", "React", "Design", "Data"],
-      prizes: ["₦2M", "₦1.2M", "₦800K"]
+      title: "South-South Regional Hackathon",
+      location: "Calabar, Cross River State",
+      date: "July 21-26, 2025",
+      theme: "Space-Tech Innovation & VSAT Training",
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=300&fit=crop",
+      participants: 120
     }
   ];
 
@@ -130,7 +117,8 @@ const Hackathon = () => {
     const styles = {
       'Open': 'bg-green-500',
       'Coming Soon': 'bg-gray-600',
-      'Apply Now': 'bg-blue-600'
+      'Apply Now': 'bg-blue-600',
+      'Completed': 'bg-gray-500'
     };
     return (
       <span className={`px-3 py-1 text-xs font-medium rounded-full text-white ${styles[status] || 'bg-gray-500'}`}>
@@ -141,6 +129,7 @@ const Hackathon = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Hero Section with Background Image */}
       <section className="relative h-[500px] md:h-[600px] overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -148,7 +137,7 @@ const Hackathon = () => {
             backgroundImage: 'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop")'
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         </div>
         
         <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
@@ -156,45 +145,70 @@ const Hackathon = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="max-w-2xl text-white"
+            className="max-w-3xl text-white"
           >
-            
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-5 mb-4 leading-[1.1]">
-              Hackathons
+            <div className="flex items-center gap-3 mb-4">
+              <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm text-sm font-medium rounded-full border border-white/30">
+                🚀 Ongoing Hackathon
+              </span>
+              <span className="text-white/70 text-sm">Cohort 3.0</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 leading-[1.1]">
+              NIGCOMSAT <br />
+              <span className="text-white/80">Hackathon 2026</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 mb-8 max-w-xl leading-relaxed">
-              Compete in NigComSat's flagship hackathons and turn your ideas into impactful solutions using space technology.
+            <p className="text-lg md:text-xl text-white/80 mb-6 max-w-xl leading-relaxed">
+              Building Satellite-Enabled Early Warning & Alert Services for Environmental, 
+              Agricultural, and Health Intelligence Across Nigeria & Africa.
             </p>
+            <div className="flex flex-wrap items-center gap-6 text-sm text-white/70 mb-8">
+              <span className="flex items-center gap-2">
+                <Calendar className="w-4 h-4" /> August 2026
+              </span>
+              <span className="flex items-center gap-2">
+                <MapPin className="w-4 h-4" /> Nigeria (Hybrid)
+              </span>
+              <span className="flex items-center gap-2">
+                <Users className="w-4 h-4" /> 50+ Participants
+              </span>
+            </div>
             <div className="flex flex-wrap gap-4">
               <button className="px-8 py-3.5 bg-white text-black rounded-lg hover:bg-gray-100 transition flex items-center gap-2 font-medium">
-                View Active <ChevronRight className="w-4 h-4" />
+                Register Now <ArrowRight className="w-4 h-4" />
               </button>
               <button className="px-8 py-3.5 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg hover:bg-white/30 transition flex items-center gap-2 font-medium text-white">
-                <Trophy className="w-4 h-4" /> Winners
+                <Trophy className="w-4 h-4" /> Learn More
               </button>
-            </div>
-            
-            {/* Quick Stats on Hero */}
-            <div className="grid grid-cols-4 gap-4 mt-8 pt-8 border-t border-white/20 max-w-lg">
-              <div>
-                <div className="text-2xl font-bold">500+</div>
-                <div className="text-sm text-white/60">Participants</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold">₦25M+</div>
-                <div className="text-sm text-white/60">Prizes</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold">50+</div>
-                <div className="text-sm text-white/60">Mentors</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold">20+</div>
-                <div className="text-sm text-white/60">Prototypes</div>
-              </div>
             </div>
           </motion.div>
         </div>
+      </section>
+
+      {/* Quick Stats */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="bg-white border border-gray-200 rounded-2xl shadow-sm grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200 overflow-hidden"
+        >
+          <div className="p-6 text-center">
+            <div className="text-2xl font-bold text-gray-900">500+</div>
+            <div className="text-sm text-gray-500">Total Participants</div>
+          </div>
+          <div className="p-6 text-center">
+            <div className="text-2xl font-bold text-gray-900">5</div>
+            <div className="text-sm text-gray-500">Regional Editions</div>
+          </div>
+          <div className="p-6 text-center">
+            <div className="text-2xl font-bold text-gray-900">50+</div>
+            <div className="text-sm text-gray-500">Mentors & Experts</div>
+          </div>
+          <div className="p-6 text-center">
+            <div className="text-2xl font-bold text-gray-900">20+</div>
+            <div className="text-sm text-gray-500">Prototypes Built</div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Search & Filters */}
@@ -213,7 +227,7 @@ const Hackathon = () => {
                 />
               </div>
               <div className="flex bg-gray-100 rounded-lg p-1">
-                {['all', 'Open', 'Coming Soon', 'Apply Now'].map(status => (
+                {['all', 'Open', 'Coming Soon', 'Completed'].map(status => (
                   <button
                     key={status}
                     onClick={() => setFilterStatus(status === 'all' ? 'all' : status)}
@@ -242,7 +256,7 @@ const Hackathon = () => {
                 <List className="w-4 h-4 text-gray-600" />
               </button>
               <span className="text-sm text-gray-500 ml-2">
-                {filteredHackathons.length} results
+                {filteredHackathons.length} result{filteredHackathons.length !== 1 ? 's' : ''}
               </span>
             </div>
           </div>
@@ -277,8 +291,8 @@ const Hackathon = () => {
                     <StatusBadge status={hack.status} />
                   </div>
                   <div className="absolute bottom-3 left-3 right-3">
-                    <h3 className="text-white font-bold text-lg">{hack.title}</h3>
-                    <p className="text-white/80 text-sm">{hack.tagline}</p>
+                    <h3 className="text-white font-bold text-lg line-clamp-1">{hack.title}</h3>
+                    <p className="text-white/80 text-sm line-clamp-1">{hack.tagline}</p>
                   </div>
                 </div>
                 <div className="p-4">
@@ -294,7 +308,7 @@ const Hackathon = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Trophy className="w-4 h-4 text-yellow-500" />
-                      <span className="font-semibold text-gray-900">{hack.prize}</span>
+                      <span className="font-semibold text-gray-900 text-sm">{hack.prize}</span>
                     </div>
                     <div className="flex items-center gap-1 text-xs text-gray-500">
                       <Users className="w-3 h-3" />
@@ -324,7 +338,7 @@ const Hackathon = () => {
                     <StatusBadge status={hack.status} />
                     <span className="text-xs text-gray-500">{hack.date}</span>
                   </div>
-                  <h3 className="font-bold text-gray-900">{hack.title}</h3>
+                  <h3 className="font-bold text-gray-900 truncate">{hack.title}</h3>
                   <p className="text-sm text-gray-500 truncate">{hack.tagline}</p>
                 </div>
                 <div className="hidden sm:flex items-center gap-4 text-sm">
@@ -342,20 +356,117 @@ const Hackathon = () => {
         )}
       </section>
 
+      {/* Past Hackathons Section */}
+      <section className="bg-gray-50 border-t border-gray-200 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-bold text-gray-900">Past Hackathons</h2>
+            <button className="text-sm text-gray-500 hover:text-gray-900 flex items-center gap-1">
+              View all <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {pastHackathons.map((hack, index) => (
+              <motion.div
+                key={hack.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-sm transition"
+              >
+                <div className="h-40 overflow-hidden">
+                  <img
+                    src={hack.image}
+                    alt={hack.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="flex items-center gap-2 text-xs text-gray-500 mb-1">
+                    <Calendar className="w-3 h-3" />
+                    <span>{hack.date}</span>
+                    <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                    <MapPin className="w-3 h-3" />
+                    <span className="truncate">{hack.location}</span>
+                  </div>
+                  <h3 className="font-semibold text-gray-900 text-sm mb-1">{hack.title}</h3>
+                  <p className="text-xs text-gray-500">{hack.theme}</p>
+                  <div className="flex items-center gap-2 mt-2 text-xs text-gray-500">
+                    <Users className="w-3 h-3" />
+                    <span>{hack.participants}+ participants</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Participate */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl font-bold text-gray-900">Why Participate?</h2>
+          <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
+            Gain hands-on experience, network with industry leaders, and win opportunities that can accelerate your career.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-sm transition"
+          >
+            <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Rocket className="w-6 h-6 text-gray-700" />
+            </div>
+            <h3 className="font-semibold text-gray-900 mb-2">Build Real Solutions</h3>
+            <p className="text-sm text-gray-500">Create prototypes that solve real-world challenges using satellite technology.</p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="bg-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-sm transition"
+          >
+            <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <UserPlus className="w-6 h-6 text-gray-700" />
+            </div>
+            <h3 className="font-semibold text-gray-900 mb-2">Expert Mentorship</h3>
+            <p className="text-sm text-gray-500">Learn from industry experts, technical mentors, and business advisors.</p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="bg-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-sm transition"
+          >
+            <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Trophy className="w-6 h-6 text-gray-700" />
+            </div>
+            <h3 className="font-semibold text-gray-900 mb-2">Accelerator Entry</h3>
+            <p className="text-sm text-gray-500">Winning teams advance to the NigComSat Accelerator Programme for funding and support.</p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="bg-black text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Build the Future?</h2>
           <p className="text-white/60 max-w-2xl mx-auto mb-8">
-            Join our community of innovators and turn your space technology ideas into reality.
+            Join the NIGCOMSAT Hackathon 2026 and turn your satellite technology ideas into reality.
           </p>
           <button className="px-8 py-3.5 bg-white text-black rounded-lg hover:bg-gray-100 transition font-medium">
-            Get Started Today
+            Register Now
           </button>
         </div>
       </section>
 
-      {/* Modal */}
+      {/* Modal for detailed view */}
       <AnimatePresence>
         {selectedHackathon && (
           <motion.div
@@ -395,8 +506,8 @@ const Hackathon = () => {
 
                   <div className="grid grid-cols-2 gap-3 text-sm">
                     <div className="bg-gray-50 p-3 rounded-lg">
-                      <div className="text-gray-500">Prize</div>
-                      <div className="font-bold text-gray-900">{selectedHackathon.prize}</div>
+                      <div className="text-gray-500">Theme</div>
+                      <div className="font-medium text-gray-900">{selectedHackathon.theme}</div>
                     </div>
                     <div className="bg-gray-50 p-3 rounded-lg">
                       <div className="text-gray-500">Location</div>
@@ -414,7 +525,7 @@ const Hackathon = () => {
 
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">Description</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{selectedHackathon.description}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">{selectedHackathon.longDescription}</p>
                   </div>
 
                   <div>
@@ -444,14 +555,14 @@ const Hackathon = () => {
                     <div className="flex gap-3">
                       {selectedHackathon.prizes.map((prize, i) => (
                         <div key={i} className="flex-1 bg-gray-50 p-3 rounded-lg text-center">
-                          <div className="text-xs text-gray-500">{['1st', '2nd', '3rd'][i]}</div>
-                          <div className="font-bold text-gray-900">{prize}</div>
+                          <div className="text-xs text-gray-500">{['Winner', 'Finalist', 'Participant'][i]}</div>
+                          <div className="font-medium text-gray-900 text-sm">{prize}</div>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="flex gap-3  pt-4 border-t border-gray-200">
+                  <div className="flex gap-3 pt-4 border-t border-gray-200">
                     <button className="flex-1 bg-black text-white py-2.5 rounded-lg hover:bg-gray-800 transition font-medium">
                       Register Now
                     </button>
