@@ -76,9 +76,9 @@ const NavBar = () => {
                           <p className="hover:bg-gray-100 cursor-pointer p-3">
                             HackFest
                           </p>
-                          <p className="hover:bg-gray-100 cursor-pointer p-3">
-                            More
-                          </p>
+                          <NavLink to="/portfolio" className="hover:bg-gray-100 cursor-pointer p-3">
+                            Portfolio
+                          </NavLink>
                         </div>
                       </div>
                     )}
