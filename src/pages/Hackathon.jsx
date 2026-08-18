@@ -1,6 +1,7 @@
 // src/pages/HackathonPage.jsx
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
 import {
   Calendar,
   MapPin,
@@ -32,14 +33,18 @@ import {
   Zap,
   Flame,
   Medal,
-  Crown
+  Crown,
+  ArrowDown
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
 
 const Hackathon = () => {
   const [viewMode, setViewMode] = useState('grid');
   const [filterStatus, setFilterStatus] = useState('all');
   const [selectedHackathon, setSelectedHackathon] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   // Hackathon data based on research
   const hackathons = [
@@ -130,7 +135,7 @@ const Hackathon = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section with Background Image */}
-      <section className="relative h-[500px] md:h-[600px] overflow-hidden">
+      <section className="relative h-screen md:h-screen overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -147,12 +152,7 @@ const Hackathon = () => {
             transition={{ duration: 0.7 }}
             className="max-w-3xl text-white"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm text-sm font-medium rounded-full border border-white/30">
-                🚀 Ongoing Hackathon
-              </span>
-              <span className="text-white/70 text-sm">Cohort 3.0</span>
-            </div>
+            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 leading-[1.1]">
               NIGCOMSAT <br />
               <span className="text-white/80">Hackathon 2026</span>
@@ -173,46 +173,31 @@ const Hackathon = () => {
               </span>
             </div>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-3.5 bg-white text-black rounded-lg hover:bg-gray-100 transition flex items-center gap-2 font-medium">
+              <a href='/apply' className="px-8 py-3.5 bg-white text-black rounded-lg hover:bg-gray-100 transition flex items-center gap-2 font-medium">
                 Register Now <ArrowRight className="w-4 h-4" />
-              </button>
-              <button className="px-8 py-3.5 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg hover:bg-white/30 transition flex items-center gap-2 font-medium text-white">
-                <Trophy className="w-4 h-4" /> Learn More
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>
+
+        <motion.button
+        onClick={() => {
+  const el = document.getElementById('search');
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 8, 0] }}
+        transition={{ opacity: { delay: 0.8 }, y: { duration: 1.6, repeat: Infinity } }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#8a8a8a] z-10"
+        aria-label="Scroll to work"
+      >
+        <ArrowDown className="w-5 h-5" />
+      </motion.button>
       </section>
 
-      {/* Quick Stats */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-white border border-gray-200 rounded-2xl shadow-sm grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200 overflow-hidden"
-        >
-          <div className="p-6 text-center">
-            <div className="text-2xl font-bold text-gray-900">500+</div>
-            <div className="text-sm text-gray-500">Total Participants</div>
-          </div>
-          <div className="p-6 text-center">
-            <div className="text-2xl font-bold text-gray-900">5</div>
-            <div className="text-sm text-gray-500">Regional Editions</div>
-          </div>
-          <div className="p-6 text-center">
-            <div className="text-2xl font-bold text-gray-900">50+</div>
-            <div className="text-sm text-gray-500">Mentors & Experts</div>
-          </div>
-          <div className="p-6 text-center">
-            <div className="text-2xl font-bold text-gray-900">20+</div>
-            <div className="text-sm text-gray-500">Prototypes Built</div>
-          </div>
-        </motion.div>
-      </section>
 
       {/* Search & Filters */}
-      <section className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+      <section id='search'  className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-4 w-full sm:w-auto">
@@ -460,9 +445,9 @@ const Hackathon = () => {
           <p className="text-white/60 max-w-2xl mx-auto mb-8">
             Join the NIGCOMSAT Hackathon 2026 and turn your satellite technology ideas into reality.
           </p>
-          <button className="px-8 py-3.5 bg-white text-black rounded-lg hover:bg-gray-100 transition font-medium">
+          <a href='/apply' className="px-8 py-3.5 bg-white text-black rounded-lg hover:bg-gray-100 transition font-medium">
             Register Now
-          </button>
+          </a>
         </div>
       </section>
 
@@ -563,9 +548,9 @@ const Hackathon = () => {
                   </div>
 
                   <div className="flex gap-3 pt-4 border-t border-gray-200">
-                    <button className="flex-1 bg-black text-white py-2.5 rounded-lg hover:bg-gray-800 transition font-medium">
+                    <a href='/apply' className="flex-1 bg-black text-white py-2.5 rounded-lg hover:bg-gray-800 transition font-medium">
                       Register Now
-                    </button>
+                    </a>
                     <button className="px-4 py-2.5 border border-gray-200 rounded-lg hover:bg-gray-50 transition">
                       <Share2 className="w-4 h-4 text-gray-600" />
                     </button>

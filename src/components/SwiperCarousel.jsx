@@ -59,7 +59,7 @@ export default function SwiperCarousel() {
               className="w-full h-screen object-cover"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
             {/* <div className="absolute left-6 md:left-16 bottom-16 md:bottom-24 text-white z-10">
               <h1 className="text-4xl md:text-7xl font-extrabold">

@@ -6,11 +6,7 @@ function AboutHeroSection() {
             <div className="max-w-7xl mx-auto w-[90%]">
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <div>
-                        <div className="inline-block bg-white rounded-full shadow-sm mb-5">
-                            <p className="text-[#2166D1] text-gray-500 p-1 font-medium tracking-wide">
-                                About the NIGCOMSAT Accelerator
-                            </p>
-                        </div>
+                        
 
                         <h1 className="text-[72px] text-black leading-[80px] font-bold text-[#2166D1] mb-8">
                             Building Nigeria's
