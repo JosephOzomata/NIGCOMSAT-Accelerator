@@ -51,22 +51,22 @@ export default function Card() {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-6 py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-items-center">
+    <div className=" bg-[#f8f8ff] w-full max-w-12xl mx-auto px-6 py-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-items-center ">
         
         {/* Left Feature Card */}
         <motion.div
-          className="w-full max-w-[550px] bg-stone-900 text-white rounded-2xl p-6 shadow-lg"
+          className="w-full max-w-[750px] bg-black/90 text-white rounded-2xl p-8 shadow-lg shadow-black/40"
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.2 }}
         >
-          <h2 className="text-2xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4">
             What NigComSat brings to the program
           </h2>
 
-          <ul className="space-y-3">
+          <ul className="space-y-5">
             <li>&gt; Satellite technology access and infrastructure for product development</li>
             <li>&gt; NIGCOMSAT brand endorsement for successful graduates.</li>
             <li>&gt; Market connections and procurement pathways.</li>
@@ -105,7 +105,7 @@ export default function Card() {
           {/* Bottom Tip (98+) */}
           <motion.div variants={fundingVariants} className="text-center">
             <h1 className="text-7xl font-bold">
-              <CountUp start={0} end={98} duration={2} enableScrollSpy scrollSpyOnce />+
+              <CountUp start={0} end={20} duration={2} enableScrollSpy scrollSpyOnce />M+
             </h1>
             <p className="text-2xl mt-2">Funding Disbursed</p>
           </motion.div>

@@ -12,17 +12,18 @@ function EligibilityChecklist() {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-[#F7F3EB] flex flex-col items-center justify-start p-6 md:p-12 box-border">
+    <div className="w-full min-h-[250px] bg-[#fcfcdc] flex flex-col items-center justify-start p-6 md:p-12 box-border">
       
+
       <header className="text-center mb-12">
-        <h2 className="text-4xl font-black text-slate-800">Eligibility Checklist</h2>
+        <h2 className="text-2xl font-black text-black">Eligibility Checklist</h2>
       </header>
 
       <div className="relative max-w-2xl w-full flex flex-col items-center pb-24">
         
         <div className="absolute left-1/2 top-0 bottom-[260px] w-1 bg-black -translate-x-1/2 z-0 w-[2px]"
         style={{backgroundImage: 'linear-gradient(to bottom, black 45%, rgba(255,255,255,0) 35%)',
-            backgroundSize: '2px 16px',
+            backgroundSize: '2px 8px',
             backgroundRepeat: 'repeat-y',
             backgroundColor: 'transparent'}}></div>
         
@@ -31,12 +32,12 @@ function EligibilityChecklist() {
           <div className="flex w-full z-10">
             <div className="w-1/2 flex justify-end pr-8">
               <div className="w-[350px] h-[150px] bg-white rounded-xl flex items-center justify-center p-4 shadow-md hover:shadow-lg transition-shadow duration-300 text-left">
-                <p className="text-lg font-bold text-slate-800 font-sans leading-snug text-center">{checklistItems[0].text}</p>
+                <p className="text-md font-bold text-slate-800 font-sans leading-snug text-center">{checklistItems[0].text}</p>
               </div>
             </div>
             <div className="w-1/2 flex justify-start pl-8">
               <div className="w-[350px] h-[150px] bg-white rounded-xl flex items-center justify-center p-4 shadow-md hover:shadow-lg transition-shadow duration-300 text-left">
-                <p className="text-lg font-bold text-slate-800 font-sans leading-snug text-center">{checklistItems[1].text}</p>
+                <p className="text-md font-bold text-slate-800 font-sans leading-snug text-center">{checklistItems[1].text}</p>
               </div>
             </div>
           </div>
@@ -44,12 +45,12 @@ function EligibilityChecklist() {
           <div className="flex w-full z-10">
             <div className="w-1/2 flex justify-end pr-8">
               <div className="w-[350px] h-[150px] bg-white rounded-xl flex items-center justify-center p-4 shadow-md hover:shadow-lg transition-shadow duration-300 text-left">
-                <p className="text-lg font-bold text-slate-800 font-sans leading-snug text-center">{checklistItems[2].text}</p>
+                <p className="text-md font-bold text-slate-800 font-sans leading-snug text-center">{checklistItems[2].text}</p>
               </div>
             </div>
             <div className="w-1/2 flex justify-start pl-8">
               <div className="w-[350px] h-[150px] bg-white rounded-xl flex items-center justify-center p-4 shadow-md hover:shadow-lg transition-shadow duration-300 text-left">
-                <p className="text-lg font-bold text-slate-800 font-sans leading-snug text-center">{checklistItems[3].text}</p>
+                <p className="text-md font-bold text-slate-800 font-sans leading-snug text-center">{checklistItems[3].text}</p>
               </div>
             </div>
           </div>
@@ -57,12 +58,12 @@ function EligibilityChecklist() {
           <div className="flex w-full z-10">
             <div className="w-1/2 flex justify-end pr-8">
               <div className="w-[350px] h-[150px] bg-white rounded-xl flex items-center justify-center p-4 shadow-md hover:shadow-lg transition-shadow duration-300 text-left">
-                <p className="text-lg font-bold text-slate-800 font-sans leading-snug text-center">{checklistItems[4].text}</p>
+                <p className="text-md font-bold text-slate-800 font-sans leading-snug text-center">{checklistItems[4].text}</p>
               </div>
             </div>
             <div className="w-1/2 flex justify-start pl-8">
               <div className="w-[350px] h-[150px] bg-white rounded-xl flex items-center justify-center p-4 shadow-md hover:shadow-lg transition-shadow duration-300 text-left">
-                <p className="text-lg font-bold text-slate-800 font-sans leading-snug text-center">{checklistItems[5].text}</p>
+                <p className="text-md font-bold text-slate-800 font-sans leading-snug text-center">{checklistItems[5].text}</p>
               </div>
             </div>
           </div>
@@ -71,7 +72,7 @@ function EligibilityChecklist() {
 
         <div className="z-10 flex justify-center w-full">
           <div className="w-[350px] h-[150px] bg-white rounded-xl flex items-center justify-center p-4 shadow-md hover:shadow-lg transition-shadow duration-300 text-left">
-            <p className="text-lg font-bold text-slate-800 font-sans leading-snug text-center">
+            <p className="text-md font-bold text-slate-800 font-sans leading-snug text-center">
               {checklistItems[6].text}
             </p>
           </div>
