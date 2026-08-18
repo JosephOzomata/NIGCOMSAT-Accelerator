@@ -73,12 +73,13 @@ const NavBar = () => {
                           <NavLink to="/spacefest" className="hover:bg-gray-100 cursor-pointer p-3">
                             Spacefest
                           </NavLink>
-                          <p className="hover:bg-gray-100 cursor-pointer p-3">
-                            HackFest
-                          </p>
-                          <p className="hover:bg-gray-100 cursor-pointer p-3">
-                            More
-                          </p>
+                          <NavLink to="/hackathon" className="hover:bg-gray-100 cursor-pointer p-3">
+                            Hackfest
+                          </NavLink>
+                          <NavLink to="/portfolio" className="hover:bg-gray-100 cursor-pointer p-3">
+                            Portfolio
+                          </NavLink>
+                          
                         </div>
                       </div>
                     )}

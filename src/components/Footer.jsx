@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from 'react'
-// import logo from "../images/logo.jpeg";
+import logo from "../images/Logo/logo.jpeg";
 import livelogo from "../images/livelogo.webm";
 import { useNavigate } from "react-router-dom";
 
@@ -24,7 +24,7 @@ const Footer = () => {
 
   return (
     <>
-      <div className=" bg-gray-200">
+      <div className=" bg-gray-200/30">
         <div className='grid lg:grid-cols-3 sm:grid-cols-1  gap-5 px-8 py-20 max-w-7xl mx-auto'>
           <div className='grid sm:grid-cols-2 lg:grid-cols-1 gap-4'>
               <div>
@@ -45,8 +45,8 @@ const Footer = () => {
           </div>
           <div className='flex justify-center items-center'>
         
-            {/* <img src={logo} alt="Logo" className='w-full h-full object-cover rounded-full'/> */}
-            <video onClick={handleClick} src={livelogo} autoPlay loop muted className="w-60 h-60 object-cover "/>
+            <img src={logo} alt="Logo" className='w-full h-full object-cover '/>
+            {/* <video onClick={handleClick} src={livelogo} autoPlay loop muted className="w-60 h-60 object-cover "/> */}
         
           </div>
           <div className="max-w-md space-y-5">

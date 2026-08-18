@@ -5,6 +5,7 @@ import Launchpad from '../components/Launchpad'
 import StepsTimeline from '../components/StepsTimeline'
 import SwiperCarousel from '../components/SwiperCarousel'
 import Alumini from '../components/Alumini'
+import Mentors from '../components/Mentors'
 import StepsTimeline2 from '../components/StepsTimeline2.0'
 
 
@@ -17,6 +18,7 @@ const Home = () => {
       <StepsTimeline2 />
       <Launchpad />
       <Alumini />
+      <Mentors />
     </>
   )
 }
